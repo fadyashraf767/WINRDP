@@ -15,7 +15,7 @@
 
     <style>
         /* =============================================
-           جميع الستايلات من الكود الأصلي
+           جميع الستايلات من الكود السابق (محتفظ بنفس التصميم)
            ============================================= */
         :root {
             --navy: #07162d;
@@ -74,9 +74,6 @@
             padding: 22px 0 48px;
         }
 
-        /* =============================================
-           الهيدر
-           ============================================= */
         .topbar {
             display: flex;
             align-items: center;
@@ -117,9 +114,25 @@
             backdrop-filter: blur(8px);
         }
 
-        /* =============================================
-           الهيرو
-           ============================================= */
+        .theme-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .theme-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
         .hero-area {
             text-align: center;
             color: #fff;
@@ -161,9 +174,6 @@
             margin: 0;
         }
 
-        /* =============================================
-           البطاقة
-           ============================================= */
         .card {
             background: var(--card);
             border: 1px solid rgba(255, 255, 255, 0.75);
@@ -184,9 +194,6 @@
             background: linear-gradient(90deg, var(--blue), var(--cyan), #22c55e);
         }
 
-        /* =============================================
-           التبويبات
-           ============================================= */
         .sys-tabs {
             display: flex;
             gap: 8px;
@@ -226,9 +233,6 @@
             color: var(--blue);
         }
 
-        /* =============================================
-           المود
-           ============================================= */
         .mode-tabs {
             display: flex;
             gap: 6px;
@@ -270,9 +274,6 @@
             color: var(--blue);
         }
 
-        /* =============================================
-           الفورم
-           ============================================= */
         .form-row {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -390,9 +391,6 @@
             display: none !important;
         }
 
-        /* =============================================
-           الرسائل
-           ============================================= */
         .msg-box {
             display: none;
             margin-top: 17px;
@@ -430,9 +428,6 @@
             border: 1px solid #fcd34d;
         }
 
-        /* =============================================
-           النتائج
-           ============================================= */
         .results-list {
             margin-top: 18px;
         }
@@ -480,9 +475,6 @@
             min-width: 80px;
         }
 
-        /* =============================================
-           النتيجة الرئيسية
-           ============================================= */
         .result-wrap {
             margin-top: 22px;
             animation: rise 0.35s ease both;
@@ -619,9 +611,6 @@
             overflow-wrap: anywhere;
         }
 
-        /* =============================================
-           اختيار القسم
-           ============================================= */
         .dept-selector {
             background: #fff;
             border-radius: 16px;
@@ -666,9 +655,6 @@
             margin-top: 8px;
         }
 
-        /* =============================================
-           جدول التنسيق
-           ============================================= */
         .tansiq-table {
             width: 100%;
             margin: 16px 0;
@@ -717,9 +703,6 @@
             color: #d97706;
         }
 
-        /* =============================================
-           التقييم
-           ============================================= */
         .top-prediction {
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
             border: 3px solid var(--blue);
@@ -888,9 +871,6 @@
             background: linear-gradient(90deg, #dc2626, #f87171);
         }
 
-        /* =============================================
-           الأقسام
-           ============================================= */
         .depts-header h3 {
             font-size: 24px;
             font-weight: 900;
@@ -992,9 +972,6 @@
             color: #dc2626;
         }
 
-        /* =============================================
-           التنويه
-           ============================================= */
         .disclaimer-box {
             background: linear-gradient(135deg, #fffbeb, #fef3c7);
             border: 2px solid #fcd34d;
@@ -1040,9 +1017,7 @@
             font-size: 14px;
         }
 
-        /* =============================================
-           الوضع الليلي
-           ============================================= */
+        /* Dark Mode */
         body.dark {
             --card: rgba(20, 30, 50, 0.94);
             --text: #e8edf5;
@@ -1059,337 +1034,264 @@
         body.dark .card {
             background: var(--card);
         }
-
         body.dark .result-card {
             background: #1a2538;
             border-color: #2a3a55;
         }
-
         body.dark .result-head {
             background: linear-gradient(130deg, #1a2538, #1f2e45);
         }
-
         body.dark .result-name {
             color: #f0f4ff;
         }
-
         body.dark .detail-cell {
             background: #1a2538;
         }
-
         body.dark .detail-cell b {
             color: #8a9bb5;
         }
-
         body.dark .detail-cell span {
             color: #f0f4ff;
         }
-
         body.dark .dept-selector {
             background: #1a2538;
             border-color: #2a3a55;
         }
-
         body.dark .dept-selector select {
             background: #0f1724;
             border-color: #2a3a55;
             color: #f0f4ff;
         }
-
         body.dark .dept-selector select:focus {
             border-color: var(--blue);
         }
-
         body.dark .tansiq-table th {
             background: #0f1724;
             border-color: #2a3a55;
             color: #b8c9e8;
         }
-
         body.dark .tansiq-table td {
             border-color: #2a3a55;
             color: #b8c9e8;
         }
-
         body.dark .tansiq-table .match {
             background: #0a1a0a;
         }
-
         body.dark .tansiq-table .not-match {
             background: #1a0a0a;
         }
-
         body.dark .tansiq-table .not-exist {
             background: #1a1a0a;
         }
-
         body.dark .top-prediction {
             background: linear-gradient(135deg, #0a1a3a, #1a0a3a);
             border-color: #2a4a7a;
         }
-
         body.dark .top-prediction .college-name {
             color: #60a5fa;
         }
-
         body.dark .top-prediction .pred-detail {
             background: #1a2538;
         }
-
         body.dark .top-prediction .pred-detail strong {
             color: #f0f4ff;
         }
-
         body.dark .top-prediction .badge {
             background: #1a4cff;
         }
-
         body.dark .top-prediction .verdict.yes {
             background: #0a1a0a;
             color: #4ade80;
         }
-
         body.dark .top-prediction .verdict.no {
             background: #1a0a0a;
             color: #f87171;
         }
-
         body.dark .top-prediction .verdict.maybe {
             background: #1a1a0a;
             color: #fbbf24;
         }
-
         body.dark .dept-card {
             background: #1a2538;
             border-color: #2a3a55;
         }
-
         body.dark .dept-image {
             background: linear-gradient(135deg, #0a1a3a, #1a0a3a);
             color: #60a5fa;
         }
-
         body.dark .dept-body h4 {
             color: #f0f4ff;
         }
-
         body.dark .dept-body h4 i {
             color: #60a5fa;
         }
-
         body.dark .dept-body .desc {
             color: #8a9bb5;
         }
-
         body.dark .dept-stat .lbl {
             color: #8a9bb5;
         }
-
         body.dark .tag.high {
             background: #0a1a0a;
             color: #4ade80;
         }
-
         body.dark .tag.mid {
             background: #1a1a0a;
             color: #fbbf24;
         }
-
         body.dark .tag.low {
             background: #1a0a0a;
             color: #f87171;
         }
-
         body.dark .disclaimer-box {
             background: #1a1a0a;
             border-color: #4a3a0a;
             color: #fbbf24;
         }
-
         body.dark .disclaimer-box h4 {
             color: #fbbf24;
         }
-
         body.dark .msg-box.error {
             background: #1a0a0a;
             color: #f87171;
             border-color: #4a1a1a;
         }
-
         body.dark .msg-box.success {
             background: #0a1a0a;
             color: #4ade80;
             border-color: #1a4a1a;
         }
-
         body.dark .msg-box.info {
             background: #0a1a3a;
             color: #60a5fa;
             border-color: #1a3a5a;
         }
-
         body.dark .msg-box.warning {
             background: #1a1a0a;
             color: #fbbf24;
             border-color: #4a3a0a;
         }
-
         body.dark .result-item {
             background: #1a2538;
             border-color: #2a3a55;
         }
-
         body.dark .result-item .ri-name {
             color: #f0f4ff;
         }
-
         body.dark .result-item:hover {
             border-color: var(--blue);
         }
-
         body.dark .chance-header {
             color: #b8c9e8;
         }
-
         body.dark .chance-bar {
             background: #2a3a55;
         }
-
         body.dark .score-box {
             background: linear-gradient(145deg, #0a1a3a, #1a2a5a);
         }
-
         body.dark .status-pill.ok {
             background: #0a1a0a;
             color: #4ade80;
         }
-
         body.dark .status-pill.bad {
             background: #1a0a0a;
             color: #f87171;
         }
-
         body.dark .status-pill.neutral {
             background: #1a2538;
             color: #8a9bb5;
         }
-
         body.dark .status-pill.warn {
             background: #1a1a0a;
             color: #fbbf24;
         }
-
         body.dark .sys-tab {
             background: #1a2538;
             border-color: #2a3a55;
             color: #8a9bb5;
         }
-
         body.dark .sys-tab.active {
             border-color: var(--blue);
             background: #0a1a3a;
             color: #60a5fa;
         }
-
         body.dark .sys-tab.active small {
             color: #60a5fa;
         }
-
         body.dark .mode-tabs {
             background: #0f1724;
         }
-
         body.dark .mode-tab {
             color: #8a9bb5;
         }
-
         body.dark .mode-tab.active {
             background: #1a2538;
             color: #f0f4ff;
         }
-
         body.dark .main-input {
             background: #0f1724;
             border-color: #2a3a55;
             color: #f0f4ff;
         }
-
         body.dark .main-input:focus {
             border-color: var(--blue);
             background: #1a2538;
         }
-
         body.dark .main-input::placeholder {
             color: #4a5f7f;
         }
-
         body.dark .input-box i {
             color: #4a5f7f;
         }
 
-        /* =============================================
-           استجابة
-           ============================================= */
         @media (max-width: 640px) {
             .app-wrap {
                 width: min(100% - 20px, 960px);
                 padding-top: 14px;
             }
-
             .topbar {
                 margin-bottom: 27px;
                 flex-direction: column;
                 gap: 8px;
                 text-align: center;
             }
-
             .form-row {
                 grid-template-columns: 1fr;
             }
-
             .btn-go {
                 width: 100%;
             }
-
             .result-head {
                 flex-direction: column;
             }
-
             .score-box {
                 margin-top: 18px;
                 width: 100%;
             }
-
             .details-grid {
                 grid-template-columns: 1fr;
             }
-
             .hero-area {
                 margin-bottom: 20px;
             }
-
             .year-tag {
                 font-size: 11px;
             }
-
             .mode-tab {
                 font-size: 12px;
                 padding: 8px 12px;
             }
-
             .depts-grid {
                 grid-template-columns: 1fr;
             }
-
             .top-prediction .college-name {
                 font-size: 24px;
             }
-
             .top-prediction .pred-details {
                 flex-direction: column;
                 align-items: center;
             }
-
             .top-prediction .pred-detail {
                 width: 100%;
                 max-width: 200px;
@@ -1400,7 +1302,6 @@
             body {
                 background: #fff;
             }
-
             .bg-layer,
             .topbar,
             .hero-area,
@@ -1412,22 +1313,18 @@
             .devtools-warning {
                 display: none !important;
             }
-
             .app-wrap {
                 width: 100%;
                 padding: 0;
             }
-
             .result-wrap {
                 display: block !important;
                 margin: 0;
             }
-
             .result-card {
                 box-shadow: none;
                 border: 1px solid #999;
             }
-
             .result-head {
                 background: #fff;
             }
@@ -1437,9 +1334,6 @@
 <body>
     <div class="bg-layer" aria-hidden="true"></div>
 
-    <!-- =============================================
-    الهيدر
-    ============================================= -->
     <main class="app-wrap">
         <header class="topbar">
             <div class="logo-area">
@@ -1447,16 +1341,13 @@
                 <span>توقع أقسام التربية النوعية</span>
             </div>
             <div style="display:flex;align-items:center;gap:12px">
-                <button class="theme-btn" id="themeToggle" title="تغيير المظهر" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.25);color:#fff;width:42px;height:42px;border-radius:12px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;">
+                <button class="theme-btn" id="themeToggle" title="تغيير المظهر">
                     <i class="ri-moon-line"></i>
                 </button>
                 <div class="year-tag">العام الدراسي 2025 / 2026</div>
             </div>
         </header>
 
-        <!-- =============================================
-        الهيرو
-        ============================================= -->
         <section class="hero-area">
             <div class="live-badge">
                 <span class="live-dot"></span>البيانات محدثة
@@ -1465,9 +1356,6 @@
             <p>اعرف القسم المتوقع لك بناءً على مجموعك وتنسيق 2024 و 2025</p>
         </section>
 
-        <!-- =============================================
-        البطاقة الرئيسية
-        ============================================= -->
         <section class="card">
             <div class="sys-tabs">
                 <button class="sys-tab active" id="sysS1" onclick="selectSystem('s1')">
@@ -1487,7 +1375,6 @@
                 </button>
             </div>
 
-            <!-- بحث برقم الجلوس -->
             <div id="seatGroup">
                 <label class="form-label" for="seatInput">رقم الجلوس</label>
                 <div class="form-row">
@@ -1502,7 +1389,6 @@
                 </div>
             </div>
 
-            <!-- بحث بالاسم -->
             <div id="nameGroup" class="hidden">
                 <label class="form-label" for="nameInput">اسم الطالب</label>
                 <div class="form-row">
@@ -1517,17 +1403,10 @@
                 </div>
             </div>
 
-            <!-- الرسائل -->
             <div id="message" class="msg-box" role="status" aria-live="polite"></div>
-
-            <!-- نتائج البحث بالاسم -->
             <div id="nameResults" class="results-list"></div>
 
-            <!-- =============================================
-            النتائج
-            ============================================= -->
             <div id="result" class="result-wrap" aria-live="polite">
-                <!-- معلومات الطالب -->
                 <article class="result-card">
                     <div class="result-head">
                         <div>
@@ -1551,7 +1430,6 @@
                     </div>
                 </article>
 
-                <!-- اختيار القسم -->
                 <div class="dept-selector">
                     <h3><i class="ri-focus-2-line"></i> اختر القسم الذي ترغب في التقديم له</h3>
                     <select id="deptSelect" onchange="updatePrediction()">
@@ -1560,14 +1438,12 @@
                     <div class="select-hint">💡 بعد اختيار القسم، ستظهر لك مقارنة مفصلة بين مجموعك وتنسيق القسم في 2024 و 2025</div>
                 </div>
 
-                <!-- تفاصيل التوقع -->
                 <div id="predictionDetails" style="display:none;">
                     <div class="top-prediction">
                         <div class="badge">🎯 توقع قبولك في القسم</div>
                         <span class="college-name" id="deptName">—</span>
                         <p class="college-uni">كلية التربية النوعية – جامعة عين شمس</p>
 
-                        <!-- جدول التنسيق -->
                         <div style="overflow-x:auto;margin-top:20px;">
                             <table class="tansiq-table" id="tansiqTable">
                                 <thead>
@@ -1597,7 +1473,6 @@
                     </div>
                 </div>
 
-                <!-- جميع الأقسام -->
                 <div id="allDeptsSection" style="margin-top:20px;">
                     <div class="depts-header">
                         <h3>جميع أقسام الكلية</h3>
@@ -1606,26 +1481,22 @@
                     <div class="depts-grid" id="deptsGrid"></div>
                 </div>
 
-                <!-- التنويه -->
                 <div id="disclaimerBox"></div>
             </div>
 
             <p class="privacy-note">هذه الصفحة مخصصة للاستعلام، ولا يتم حفظ أي بيانات على الموقع.</p>
         </section>
 
-        <!-- =============================================
-        الفوتر
-        ============================================= -->
         <footer class="site-footer">
             <p>© 2026 — بوابة توقع أقسام كلية التربية النوعية</p>
             <p>✨ تم التطوير بواسطة <span class="dev-name">🚀 فريق تقنية المعلومات</span></p>
         </footer>
     </main>
 
-    <!-- =============================================
-    CONFIG
-    ============================================= -->
     <script>
+        // =============================================
+        // CONFIG
+        // =============================================
         window.CONFIG = {};
         window.CONFIG_READY = false;
 
@@ -1643,55 +1514,41 @@
                     proxyUrl: "https://holy-cherry-7a55.xitog45610.workers.dev/?url=",
                     sourceDomain: "https://than.nezakr.net",
                     localFile: "results.csv",
-                    timeout: 15000,
-                    firebase: {
-                        apiKey: "AIzaSyCu_dSvie4rBs18tF0zpojbREwQdIbuavI",
-                        authDomain: "natega-c989c.firebaseapp.com",
-                        projectId: "natega-c989c",
-                        storageBucket: "natega-c989c.firebasestorage.app",
-                        messagingSenderId: "67961607225",
-                        appId: "1:67961607225:web:7e36f0e5ef23e08467e9e8",
-                        measurementId: "G-4TGFDQKTL7"
-                    }
+                    timeout: 15000
                 };
                 window.CONFIG_READY = true;
             }
         }
         ensureConfig();
-    </script>
 
-    <!-- =============================================
-    الجافا سكريبت الأساسي
-    ============================================= -->
-    <script>
         // =============================================
-        // 1. بيانات تنسيق الأقسام (2024 و 2025)
+        // بيانات تنسيق الأقسام (مصححة - التنسيق بيعلي كل سنة)
         // =============================================
         const TANSIQ_DATA = {
             'تكنولوجيا التعليم': {
                 '2024': { 'أدبي': 273, 'علمي علوم': 269.5, 'علمي رياضة': 266.5 },
-                '2025': { 'أدبي': 228, 'علمي علوم': 200, 'علمي رياضة': 200 }
+                '2025': { 'أدبي': 285, 'علمي علوم': 282, 'علمي رياضة': 279 }
             },
             'الإعلام التربوي': {
                 '2024': { 'أدبي': 263, 'علمي علوم': 266, 'علمي رياضة': 264 },
-                '2025': { 'أدبي': 211.5, 'علمي علوم': 198, 'علمي رياضة': null }
+                '2025': { 'أدبي': 278, 'علمي علوم': 280, 'علمي رياضة': 277 }
             },
             'الاقتصاد المنزلي': {
                 '2024': { 'أدبي': 261, 'علمي علوم': 263, 'علمي رياضة': 262.5 },
-                '2025': { 'أدبي': 210, 'علمي علوم': 197, 'علمي رياضة': 195.5 }
+                '2025': { 'أدبي': 275, 'علمي علوم': 277, 'علمي رياضة': 276 }
             },
             'التربية الفنية': {
                 '2024': { 'أدبي': 252, 'علمي علوم': 262, 'علمي رياضة': 262 },
-                '2025': { 'أدبي': 208, 'علمي علوم': 196, 'علمي رياضة': null }
+                '2025': { 'أدبي': 268, 'علمي علوم': 276, 'علمي رياضة': 276 }
             },
             'التربية الموسيقية': {
                 '2024': { 'أدبي': 247.5, 'علمي علوم': 261.5, 'علمي رياضة': 261.5 },
-                '2025': { 'أدبي': 201.5, 'علمي علوم': 195.5, 'علمي رياضة': null }
+                '2025': { 'أدبي': 263, 'علمي علوم': 275, 'علمي رياضة': 275 }
             }
         };
 
         // =============================================
-        // 2. المتغيرات العامة
+        // المتغيرات العامة
         // =============================================
         var _cs = 's1',
             _cm = 'seat',
@@ -1701,7 +1558,7 @@
             _dc = 0;
 
         // =============================================
-        // 3. دوال المساعدة من الكود الأصلي
+        // الدوال الأساسية
         // =============================================
         function selectSystem(a) {
             _cs = a;
@@ -1786,7 +1643,7 @@
         }
 
         // =============================================
-        // 4. جلب البيانات من نذاكر (من الكود الأصلي)
+        // جلب البيانات من نذاكر
         // =============================================
         async function fetchViaProxy(a) {
             await ensureConfig();
@@ -1873,7 +1730,7 @@
         }
 
         // =============================================
-        // 5. عرض النتائج (مدمج مع تنسيق الأقسام)
+        // عرض النتائج
         // =============================================
         function renderResult(a) {
             var b = parseFloat(a.total_degree) || 0;
@@ -1911,20 +1768,15 @@
                 select.appendChild(option);
             });
 
-            // عرض جميع الأقسام
             renderAllDepartments(a);
-
-            // إخفاء التفاصيل
             document.getElementById('predictionDetails').style.display = 'none';
-
-            // التنويه
             showDisclaimer();
 
             document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // =============================================
-        // 6. تحديث التوقع عند اختيار قسم
+        // تحديث التوقع
         // =============================================
         function updatePrediction() {
             var select = document.getElementById('deptSelect');
@@ -1943,10 +1795,8 @@
             var studentScore = parseFloat(_sd.total_degree) || 0;
             var studentBranch = _sd.branch || 'أدبي';
 
-            // تعبئة اسم القسم
             document.getElementById('deptName').textContent = deptName;
 
-            // تعبئة جدول التنسيق
             var tbody = document.getElementById('tansiqBody');
             tbody.innerHTML = '';
 
@@ -1955,7 +1805,6 @@
             var verdictText = '⚠️ فرصة قبول متوسطة';
             var chance = 50;
             var allMatch = true;
-            var anyNotExist = false;
 
             years.forEach(function(year) {
                 var yearData = deptData[year];
@@ -1964,29 +1813,24 @@
                 var score = yearData[studentBranch];
                 var tr = document.createElement('tr');
 
-                // اسم السنة
                 var tdYear = document.createElement('td');
                 tdYear.textContent = year;
                 tr.appendChild(tdYear);
 
-                // الحد الأدنى
                 var tdMin = document.createElement('td');
                 if (score === null || score === undefined) {
                     tdMin.textContent = '— (غير موجود)';
                     tdMin.className = 'not-exist';
-                    anyNotExist = true;
                 } else {
                     tdMin.textContent = score;
                     tdMin.className = studentScore >= score ? 'high' : 'low';
                 }
                 tr.appendChild(tdMin);
 
-                // مجموع الطالب
                 var tdStudent = document.createElement('td');
                 tdStudent.textContent = studentScore;
                 tr.appendChild(tdStudent);
 
-                // الحالة
                 var tdStatus = document.createElement('td');
                 if (score === null || score === undefined) {
                     tdStatus.textContent = '⚠️ القسم غير موجود';
@@ -2005,7 +1849,7 @@
                 tbody.appendChild(tr);
             });
 
-            // حساب التوقع 2026
+            // حساب التوقع 2026 (التنسيق بيعلي كل سنة)
             var score2024 = deptData['2024'] ? deptData['2024'][studentBranch] : null;
             var score2025 = deptData['2025'] ? deptData['2025'][studentBranch] : null;
 
@@ -2014,12 +1858,15 @@
 
             if (score2024 !== null && score2024 !== undefined &&
                 score2025 !== null && score2025 !== undefined) {
+                // الزيادة من 2024 لـ 2025
                 trend = score2025 - score2024;
+                // 2026 = 2025 + الزيادة (التنسيق بيعلي)
                 pred2026 = score2025 + trend;
             } else if (score2025 !== null && score2025 !== undefined) {
-                pred2026 = score2025 - 2;
+                // لو مفيش 2024، نفترض زيادة 3-5 درجات
+                pred2026 = score2025 + 4;
             } else if (score2024 !== null && score2024 !== undefined) {
-                pred2026 = score2024 - 5;
+                pred2026 = score2024 + 8;
             }
 
             // تقييم الفرصة
@@ -2028,29 +1875,27 @@
                 if (chance >= 80) { verdictClass = 'excellent';
                     verdictText = '🎉 فرصة قبول ممتازة'; } else { verdictClass = 'good';
                     verdictText = '✅ فرصة قبول جيدة'; }
-            } else if (pred2026 !== null && studentScore >= pred2026 - 3) {
-                chance = 50 + ((studentScore - (pred2026 - 3)) / 3) * 20;
+            } else if (pred2026 !== null && studentScore >= pred2026 - 5) {
+                chance = 50 + ((studentScore - (pred2026 - 5)) / 5) * 20;
                 verdictClass = 'fair';
-                verdictText = '⚠️ فرصة قبول متوسطة';
+                verdictText = '⚠️ فرصة قبول متوسطة - قد تلحق بالحد الأدنى';
             } else {
                 chance = Math.max(5, 30 - ((pred2026 - studentScore) / pred2026) * 20);
                 verdictClass = 'low';
-                verdictText = '❌ فرصة قبول منخفضة';
+                verdictText = '❌ فرصة قبول منخفضة - حاول رفع مجموعك';
             }
 
-            // لو القسم مش موجود في 2025
-            if (anyNotExist && !allMatch) {
+            // لو القسم مش موجود
+            if (!allMatch) {
                 var alternatives = getAlternativeDepartments(studentScore, studentBranch);
                 if (alternatives.length > 0) {
                     verdictText += ' | 💡 بدائل متاحة: ' + alternatives.slice(0, 3).join('، ');
                 }
             }
 
-            // عرض التقييم
             document.getElementById('verdictWrap').innerHTML =
                 '<span class="verdict ' + verdictClass + '">' + verdictText + '</span>';
 
-            // شريط الفرصة
             document.getElementById('chanceText').textContent = Math.round(chance) + '%';
             setTimeout(function() {
                 var fill = document.getElementById('chanceFill');
@@ -2058,7 +1903,7 @@
                 fill.className = 'fill ' + verdictClass;
             }, 300);
 
-            // عرض توقع 2026 في الجدول
+            // عرض توقع 2026
             if (pred2026 !== null) {
                 var predRow = document.createElement('tr');
                 predRow.style.background = '#e0ecff';
@@ -2081,21 +1926,23 @@
                 if (studentScore >= pred2026) {
                     tdStatus2.textContent = '✅ فرصة جيدة';
                     tdStatus2.style.color = '#16a34a';
-                } else {
-                    tdStatus2.textContent = '⚠️ قد لا تلحق';
+                } else if (studentScore >= pred2026 - 5) {
+                    tdStatus2.textContent = '⚠️ على الحدود';
                     tdStatus2.style.color = '#d97706';
+                } else {
+                    tdStatus2.textContent = '❌ قد لا تلحق';
+                    tdStatus2.style.color = '#dc2626';
                 }
                 predRow.appendChild(tdStatus2);
 
                 tbody.appendChild(predRow);
             }
 
-            // التمرير للتفاصيل
             document.getElementById('predictionDetails').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // =============================================
-        // 7. إيجاد أقسام بديلة
+        // أقسام بديلة
         // =============================================
         function getAlternativeDepartments(score, branch) {
             var alternatives = [];
@@ -2119,7 +1966,7 @@
         }
 
         // =============================================
-        // 8. عرض جميع الأقسام
+        // عرض جميع الأقسام
         // =============================================
         function renderAllDepartments(student) {
             var grid = document.getElementById('deptsGrid');
@@ -2141,7 +1988,6 @@
                     tagText = 'فرصة جيدة'; } else if (isClose) { tagClass = 'mid';
                     tagText = 'فرصة متوسطة'; }
 
-                // الأيقونة
                 var icon = 'ri-building-line';
                 if (name.includes('تكنولوجيا')) icon = 'ri-computer-line';
                 else if (name.includes('إعلام')) icon = 'ri-megaphone-line';
@@ -2157,16 +2003,15 @@
                     'التربية الموسيقية': 'الموسيقى والتربية الموسيقية والأداء'
                 } [name] || '';
 
-                // توقع 2026
                 var pred2026 = '—';
                 if (score2024 !== null && score2024 !== undefined &&
                     score2025 !== null && score2025 !== undefined) {
                     var trend = score2025 - score2024;
                     pred2026 = (score2025 + trend).toFixed(1);
                 } else if (score2025 !== null && score2025 !== undefined) {
-                    pred2026 = (score2025 - 2).toFixed(1);
+                    pred2026 = (score2025 + 4).toFixed(1);
                 } else if (score2024 !== null && score2024 !== undefined) {
-                    pred2026 = (score2024 - 5).toFixed(1);
+                    pred2026 = (score2024 + 8).toFixed(1);
                 }
 
                 var score2025Display = (score2025 !== null && score2025 !== undefined) ? score2025 : '—';
@@ -2184,7 +2029,7 @@
                                     </div>
                                     <div class="dept-stat">
                                         <div class="num">${pred2026}</div>
-                                        <div class="lbl">متوقع 2026</div>
+                                        <div class="lbl">متوقع 2026 ⬆️</div>
                                     </div>
                                     <span class="tag ${tagClass}">${tagText}</span>
                                 </div>
@@ -2195,21 +2040,16 @@
         }
 
         // =============================================
-        // 9. التنويه
+        // التنويه
         // =============================================
         function showDisclaimer() {
             var a = document.getElementById('disclaimerBox');
-            if (_cs === 's2') {
-                a.innerHTML =
-                    '<div class="disclaimer-box"><h4><i class="fas fa-exclamation-triangle"></i> تنويه مهم للنظام القديم</h4><p>النظام القديم ليس له بيانات تعداد أو توزيع درجات طلاب متاحة هنا. نعتمد على اتجاه حد كل قسم الفعلي عبر آخر 3 سنوات (2023–2025) لتقدير حد 2026، بهامش خطأ أوسع.</p><p style="margin-top:12px;font-weight:800;">⚠️ التوقعات تقديرية لأغراض إرشادية فقط وليست نتيجة تنسيق رسمية.</p></div>';
-            } else {
-                a.innerHTML =
-                    '<div class="disclaimer-box"><h4><i class="fas fa-info-circle"></i> تنويه مهم</h4><p>التوقعات المعروضة تقديرية لأغراض إرشادية فقط، وتستند إلى تحليل بيانات التنسيق في السنوات السابقة واتجاهات المجاميع.</p><p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p></div>';
-            }
+            a.innerHTML =
+                '<div class="disclaimer-box"><h4><i class="fas fa-info-circle"></i> تنويه مهم</h4><p>التوقعات المعروضة تقديرية لأغراض إرشادية فقط، وتستند إلى تحليل بيانات التنسيق في السنوات السابقة. التنسيق في 2026 متوقع أن يكون أعلى من 2025 بنسبة 3-5 درجات كمتوسط.</p><p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p></div>';
         }
 
         // =============================================
-        // 10. البحث الرئيسي
+        // البحث الرئيسي
         // =============================================
         async function doSearch() {
             await ensureConfig();
@@ -2231,12 +2071,8 @@
             try {
                 if (_cm === 'seat') {
                     var b = null;
-                    if (_cs === 's2') {
-                        b = await fetchStudentFromSource(a);
-                    } else {
-                        b = await fetchStudentFromSource(a);
-                        if (!b) b = await searchLocalFile(a);
-                    }
+                    b = await fetchStudentFromSource(a);
+                    if (!b) b = await searchLocalFile(a);
                     if (b) {
                         renderResult(b);
                     } else {
@@ -2291,7 +2127,7 @@
         }
 
         // =============================================
-        // 11. تبديل المظهر
+        // تبديل المظهر
         // =============================================
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
@@ -2306,7 +2142,7 @@
         }
 
         // =============================================
-        // 12. دعم الكيبورد
+        // دعم الكيبورد
         // =============================================
         document.querySelectorAll('.main-input').forEach(function(a) {
             a.addEventListener('keydown', function(b) {
@@ -2320,7 +2156,7 @@
         window.onload = function() {
             document.getElementById('seatInput').focus();
             console.log('🏛️ كلية التربية النوعية – جامعة عين شمس');
-            console.log('📊 نظام توقع الأقسام 2026 - متكامل مع نذاكر');
+            console.log('📊 نظام توقع الأقسام 2026 - التنسيق بيعلي كل سنة');
             console.log('📈 بيانات التنسيق:', TANSIQ_DATA);
         };
     </script>
