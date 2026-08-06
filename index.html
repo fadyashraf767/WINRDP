@@ -74,24 +74,19 @@
         .detail-cell { background: #fff; padding: 19px 22px; min-height: 86px; }
         .detail-cell b { display: block; color: var(--muted); font-size: 12px; margin-bottom: 7px; }
         .detail-cell span { font-weight: 900; font-size: 16px; overflow-wrap: anywhere; }
-        
-        /* Department Selector */
         .dept-selector { background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 20px; margin-top: 20px; }
         .dept-selector h3 { font-size: 18px; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
         .dept-selector h3 i { color: var(--blue); }
         .dept-selector select { width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 14px; font-family: 'Cairo', sans-serif; font-size: 16px; font-weight: 700; color: #1a2332; background: #f8faff; outline: none; cursor: pointer; transition: 0.2s; }
         .dept-selector select:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(26,76,255,0.06); }
         .select-hint { font-size: 13px; color: #6a7a95; margin-top: 8px; }
-
-        /* Prediction Result */
         .prediction-result-box { margin-top: 20px; display: none; animation: rise 0.35s ease both; }
         .prediction-result-box.show { display: block; }
-        .top-prediction { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 3px solid var(--blue); border-radius: 24px; padding: 30px; text-align: center; position: relative; overflow: hidden; }
-        .top-prediction.accepted { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: #059669; }
-        .top-prediction.rejected { background: linear-gradient(135deg, #fef2f2, #fee2e2); border-color: #dc2626; }
+        .top-prediction { border-radius: 24px; padding: 30px; text-align: center; position: relative; overflow: hidden; }
+        .top-prediction.accepted { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 3px solid #059669; }
+        .top-prediction.rejected { background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 3px solid #dc2626; }
         .top-prediction::before { content: "🎯"; position: absolute; top: -20px; left: -20px; font-size: 60px; opacity: 0.15; }
         .top-prediction .badge { display: inline-block; padding: 8px 20px; border-radius: 30px; font-weight: 800; font-size: 14px; margin-bottom: 20px; }
-        .top-prediction .badge.blue { background: var(--blue); color: #fff; }
         .top-prediction .badge.green { background: #059669; color: #fff; }
         .top-prediction .badge.red { background: #dc2626; color: #fff; }
         .top-prediction .dept-name { font-size: 36px; font-weight: 900; margin: 10px 0; }
@@ -105,23 +100,12 @@
         .top-prediction .verdict { display: inline-block; padding: 12px 30px; border-radius: 30px; font-weight: 900; font-size: 20px; margin-top: 20px; }
         .top-prediction .verdict.yes { background: #dcfce7; color: #047857; }
         .top-prediction .verdict.no { background: #fee2e2; color: #991b1b; }
-        
-        /* Recommendation Box */
+        .details-btn { display: inline-block; margin-top: 20px; padding: 12px 28px; background: var(--blue); color: #fff; border: none; border-radius: 12px; font-family: 'Cairo', sans-serif; font-weight: 800; font-size: 15px; cursor: pointer; transition: all 0.2s; }
+        .details-btn:hover { background: #0d5ed7; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20,104,232,0.3); }
         .recommendation-box { margin-top: 20px; background: linear-gradient(135deg, #fef3c7, #fff7ed); border: 3px solid #f59e0b; border-radius: 24px; padding: 30px; text-align: center; display: none; animation: rise 0.4s ease both; }
         .recommendation-box.show { display: block; }
         .recommendation-box .rec-icon { font-size: 48px; margin-bottom: 12px; }
         .recommendation-box h3 { font-size: 20px; font-weight: 900; color: #b45309; margin-bottom: 12px; }
-        .recommendation-box .rec-dept { font-size: 28px; font-weight: 900; color: #92400e; margin: 10px 0; }
-        .recommendation-box .rec-details { font-size: 14px; color: #92400e; line-height: 1.8; margin-top: 10px; }
-        .recommendation-box .rec-score { display: inline-block; background: #fff; padding: 10px 20px; border-radius: 12px; margin: 8px; font-weight: 800; color: #b45309; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-
-        /* Old System Notice */
-        .old-system-notice { background: linear-gradient(135deg, #fff7ed, #fffbeb); border: 3px solid #f59e0b; border-radius: 20px; padding: 30px; text-align: center; margin-top: 20px; }
-        .old-system-notice h3 { color: #b45309; font-size: 20px; margin-bottom: 12px; }
-        .old-system-notice p { color: #92400e; font-size: 14px; line-height: 1.8; }
-        .old-system-notice .icon { font-size: 48px; margin-bottom: 12px; }
-
-        /* All Departments */
         .all-depts-section { margin-top: 28px; }
         .section-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
         .section-title i { color: var(--blue); }
@@ -139,21 +123,52 @@
         .tag.green { background: #dcfce7; color: #047857; }
         .tag.yellow { background: #fef3c7; color: #92400e; }
         .tag.red { background: #fee2e2; color: #991b1b; }
-
+        .dept-card .info-btn { display: block; margin-top: 12px; padding: 8px 16px; background: #eff6ff; color: var(--blue); border: 1px solid #bfdbfe; border-radius: 10px; cursor: pointer; font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 13px; transition: all 0.2s; text-align: center; }
+        .dept-card .info-btn:hover { background: #dbeafe; border-color: var(--blue); }
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9999; justify-content: center; align-items: center; padding: 20px; }
+        .modal-overlay.show { display: flex; }
+        .modal-content { background: #fff; border-radius: 20px; padding: 30px; max-width: 750px; width: 100%; max-height: 85vh; overflow-y: auto; position: relative; animation: rise 0.3s ease; }
+        .modal-close { position: absolute; top: 15px; left: 15px; background: #f1f5f9; border: none; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; font-size: 18px; color: #64748b; transition: all 0.2s; }
+        .modal-close:hover { background: #e2e8f0; color: #0f172a; }
+        .modal-content h2 { font-size: 24px; font-weight: 900; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+        .modal-content h3 { font-size: 19px; font-weight: 800; color: var(--blue); margin: 20px 0 10px; }
+        .modal-content .subtitle { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+        .modal-content ul { list-style: none; padding: 0; }
+        .modal-content ul li { padding: 8px 0; font-size: 15px; line-height: 1.8; border-bottom: 1px solid #f1f5f9; }
+        .modal-content ul li:last-child { border-bottom: none; }
+        .modal-content .pros li::before { content: "✅ "; margin-left: 8px; }
+        .modal-content .cons li::before { content: "❌ "; margin-left: 8px; }
+        .modal-content .highlight-box { background: linear-gradient(135deg, #fef3c7, #fff7ed); border: 2px solid #f59e0b; border-radius: 14px; padding: 20px; margin: 20px 0; }
+        .modal-content .highlight-box h4 { color: #b45309; margin-bottom: 8px; }
+        .modal-content .divider { border: none; border-top: 2px dashed #e2e8f0; margin: 24px 0; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9998; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 25px rgba(37,211,102,0.4); cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 30px rgba(37,211,102,0.5); }
+        .whatsapp-float i { font-size: 32px; color: #fff; }
+        .old-system-notice { background: linear-gradient(135deg, #fff7ed, #fffbeb); border: 3px solid #f59e0b; border-radius: 20px; padding: 30px; text-align: center; margin-top: 20px; }
+        .old-system-notice h3 { color: #b45309; font-size: 20px; margin-bottom: 12px; }
+        .old-system-notice p { color: #92400e; font-size: 14px; line-height: 1.8; }
         .disclaimer-box { background: linear-gradient(135deg, #fffbeb, #fef3c7); border: 2px solid #fcd34d; border-radius: 16px; padding: 20px; margin-top: 20px; font-size: 13px; line-height: 1.9; color: #92400e; }
         .disclaimer-box h4 { color: #b45309; margin-bottom: 10px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
         .privacy-note { text-align: center; color: #6b7f99; font-size: 12px; margin-top: 18px; line-height: 1.7; }
         .site-footer { text-align: center; color: #59708f; font-size: 12px; margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
         .site-footer .dev-name { color: #f59e0b; font-weight: 800; font-size: 14px; }
-        .linkedin-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 999px; background: rgba(10,102,194,0.06); border: 1px solid rgba(10,102,194,0.2); color: #0a66c2; text-decoration: none; font-weight: 700; font-size: 12px; transition: all 0.2s; }
-        .linkedin-badge:hover { background: rgba(10,102,194,0.12); }
-        .linkedin-badge i { font-size: 15px; }
-        @media (max-width: 640px) { .app-wrap { width: min(100% - 20px, 960px); padding-top: 14px; } .topbar { margin-bottom: 27px; flex-direction: column; gap: 8px; text-align: center; } .form-row { grid-template-columns: 1fr; } .btn-go { width: 100%; } .result-head { flex-direction: column; } .score-box { margin-top: 18px; width: 100%; } .details-grid { grid-template-columns: 1fr; } .hero-area { margin-bottom: 20px; } .year-tag { font-size: 11px; } .depts-grid { grid-template-columns: 1fr; } }
-        @media print { body { background: #fff; } .bg-layer, .topbar, .hero-area, .card, .help-text, .msg-box, .privacy-note, .site-footer { display: none !important; } .app-wrap { width: 100%; padding: 0; } .result-wrap { display: block !important; margin: 0; } .result-card { box-shadow: none; border: 1px solid #999; } .result-head { background: #fff; } }
+        @media (max-width: 640px) { .app-wrap { width: min(100% - 20px, 960px); padding-top: 14px; } .topbar { margin-bottom: 27px; flex-direction: column; gap: 8px; text-align: center; } .form-row { grid-template-columns: 1fr; } .btn-go { width: 100%; } .result-head { flex-direction: column; } .score-box { margin-top: 18px; width: 100%; } .details-grid { grid-template-columns: 1fr; } .hero-area { margin-bottom: 20px; } .year-tag { font-size: 11px; } .depts-grid { grid-template-columns: 1fr; } .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; } }
     </style>
 </head>
 <body>
     <div class="bg-layer" aria-hidden="true"></div>
+    
+    <a href="https://wa.me/201274670994" target="_blank" class="whatsapp-float" title="تواصل معانا على واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" id="modalContent" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
     <main class="app-wrap">
         <header class="topbar">
             <div class="logo-area">
@@ -188,7 +203,6 @@
                 </div>
             </div>
             <div id="message" class="msg-box" role="status" aria-live="polite"></div>
-            
             <div id="result" class="result-wrap" aria-live="polite">
                 <article class="result-card">
                     <div class="result-head">
@@ -212,7 +226,6 @@
                         <div class="detail-cell"><b>العام الدراسي</b><span>2025 / 2026</span></div>
                     </div>
                 </article>
-
                 <div id="predictionContent"></div>
                 <div id="disclaimerBox"></div>
             </div>
@@ -220,68 +233,141 @@
         </section>
         <footer class="site-footer">
             <p>© 2026 — كلية التربية النوعية - جامعة عين شمس</p>
-            <p>✨ تم التطوير بواسطة <span class="dev-name">🚀 فريق تقنية المعلومات</span></p>
-            <a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" class="linkedin-badge"><i class="fab fa-linkedin"></i> تواصل معي على LinkedIn</a>
+            <p>✨ تم التطوير بواسطة <span class="dev-name">🚀 فادي أشرف</span></p>
+            <a href="https://wa.me/201274670994" target="_blank" style="color:#25D366;text-decoration:none;font-weight:700;">📱 تواصل معانا على واتساب: 01274670994</a>
         </footer>
     </main>
 
     <script>
-        // =============================================
-        // CONFIG
-        // =============================================
-        window.CONFIG = {};
-        window.CONFIG_READY = false;
+        window.CONFIG = { proxyUrl: "https://holy-cherry-7a55.xitog45610.workers.dev/?url=", sourceDomain: "https://than.nezakr.net", localFile: "results.csv", timeout: 15000 };
+        window.CONFIG_READY = true;
 
-        async function ensureConfig() {
-            if (window.CONFIG_READY && window.CONFIG.proxyUrl) return;
-            try {
-                var a = await fetch('/api/config');
-                if (a.ok) { window.CONFIG = await a.json(); window.CONFIG_READY = true; }
-            } catch(b) {}
-            if (!window.CONFIG.proxyUrl) {
-                window.CONFIG = { proxyUrl: "https://holy-cherry-7a55.xitog45610.workers.dev/?url=", sourceDomain: "https://than.nezakr.net", localFile: "results.csv", timeout: 15000 };
-                window.CONFIG_READY = true;
-            }
-        }
-        ensureConfig();
-
-        // =============================================
-        // بيانات تنسيق الأقسام (للنظام الحديث فقط - من 320)
-        // =============================================
         const TANSIQ_DATA = {
-            'تكنولوجيا التعليم': {
-                '2024': { 'أدبي': 273, 'علمي علوم': 269.5, 'علمي رياضة': 266.5 },
-                '2025': { 'أدبي': 285, 'علمي علوم': 282, 'علمي رياضة': 279 }
-            },
-            'الإعلام التربوي': {
-                '2024': { 'أدبي': 263, 'علمي علوم': 266, 'علمي رياضة': 264 },
-                '2025': { 'أدبي': 278, 'علمي علوم': 280, 'علمي رياضة': 277 }
-            },
-            'الاقتصاد المنزلي': {
-                '2024': { 'أدبي': 261, 'علمي علوم': 263, 'علمي رياضة': 262.5 },
-                '2025': { 'أدبي': 275, 'علمي علوم': 277, 'علمي رياضة': 276 }
-            },
-            'التربية الفنية': {
-                '2024': { 'أدبي': 252, 'علمي علوم': 262, 'علمي رياضة': 262 },
-                '2025': { 'أدبي': 268, 'علمي علوم': 276, 'علمي رياضة': 276 }
-            },
-            'التربية الموسيقية': {
-                '2024': { 'أدبي': 247.5, 'علمي علوم': 261.5, 'علمي رياضة': 261.5 },
-                '2025': { 'أدبي': 263, 'علمي علوم': 275, 'علمي رياضة': 275 }
-            }
-        };
-
-        const DEPT_DESC = {
-            'تكنولوجيا التعليم': 'توظيف التكنولوجيا الحديثة في العملية التعليمية وتطوير المناهج',
-            'الإعلام التربوي': 'الإعلام والصحافة والإنتاج الإعلامي الموجه للمؤسسات التعليمية',
-            'الاقتصاد المنزلي': 'الاقتصاد المنزلي والتربية الأسرية والتغذية وعلوم الأطعمة',
-            'التربية الفنية': 'الفنون التشكيلية والتربية الفنية وتنمية الإبداع',
-            'التربية الموسيقية': 'الموسيقى والتربية الموسيقية والعزف والتأليف والأداء الصوتي'
+            'تكنولوجيا التعليم': { '2024': { 'أدبي': 273, 'علمي علوم': 269.5, 'علمي رياضة': 266.5 }, '2025': { 'أدبي': 285, 'علمي علوم': 282, 'علمي رياضة': 279 } },
+            'الإعلام التربوي': { '2024': { 'أدبي': 263, 'علمي علوم': 266, 'علمي رياضة': 264 }, '2025': { 'أدبي': 278, 'علمي علوم': 280, 'علمي رياضة': 277 } },
+            'الاقتصاد المنزلي': { '2024': { 'أدبي': 261, 'علمي علوم': 263, 'علمي رياضة': 262.5 }, '2025': { 'أدبي': 275, 'علمي علوم': 277, 'علمي رياضة': 276 } },
+            'التربية الفنية': { '2024': { 'أدبي': 252, 'علمي علوم': 262, 'علمي رياضة': 262 }, '2025': { 'أدبي': 268, 'علمي علوم': 276, 'علمي رياضة': 276 } },
+            'التربية الموسيقية': { '2024': { 'أدبي': 247.5, 'علمي علوم': 261.5, 'علمي رياضة': 261.5 }, '2025': { 'أدبي': 263, 'علمي علوم': 275, 'علمي رياضة': 275 } }
         };
 
         // =============================================
-        // المتغيرات العامة
+        // رسائل الأقسام التفصيلية
         // =============================================
+        function getDeptMessage(deptName) {
+            var messages = {
+                'تكنولوجيا التعليم': `
+                    <h2>📱 قسم تكنولوجيا التعليم</h2>
+                    <p class="subtitle">من واقع تجربة <strong>فادي أشرف</strong> - طالب في الفرقة الرابعة</p>
+                    <h3>مميزات القسم</h3>
+                    <ul class="pros">
+                        <li>هتتعلم أساسيات الجرافيك، والمونتاج، وإنتاج الوسائط التعليمية، وبعض أساسيات البرمجة حسب الخطة الدراسية.</li>
+                        <li>القسم بيفتحلك أكتر من مجال بعد التخرج، سواء معلم حاسب، أو أخصائي تكنولوجيا تعليم، أو تكمل في مجال الجرافيك أو الميديا لو طورت نفسك.</li>
+                        <li>الدكاترة والمعيدين في القسم متعاونين جدًا، ولو عندك مشكلة هتلاقي حد يساعدك، ورئيسة القسم كمان متعاونة جدًا مع الطلبة.</li>
+                    </ul>
+                    <h3>عيوب القسم</h3>
+                    <ul class="cons">
+                        <li>أول سنة ممكن تحس إنك تايه، وإن بعض المواد ملهاش علاقة بالقسم، لكن بعد كده هتبدأ تربط كل حاجة ببعض.</li>
+                        <li>الكلية هتديك الأساس بس، لكن الاحتراف هيعتمد عليك. لو عايز تبقى مميز لازم تتعلم من بره وتشتغل على نفسك وتعمل مشاريع خاصة بيك.</li>
+                        <li>أنصح أي حد داخل القسم إنه يكون معاه <strong>لاب توب</strong>. مش شرط يكون إمكانياته عالية، لكن وجوده هيفرق جدًا في تنفيذ التاسكات والمشاريع.</li>
+                    </ul>
+                    <hr class="divider">
+                    <div class="highlight-box">
+                        <h4>💡 نصيحة من فادي</h4>
+                        <p style="font-size:14px;line-height:1.8;">لو بتحب التكنولوجيا أو الجرافيك أو الكمبيوتر، ومستعد تتعلم وتطور من نفسك، فالقسم هيكون مناسب ليك جدًا. لكن افتكر إن الكلية لوحدها مش هتخليك محترف، هي هتحطك على أول الطريق، والباقي هيكون باجتهادك أنت.</p>
+                    </div>
+                `,
+                'الإعلام التربوي': `
+                    <h2>📢 قسم الإعلام التربوي</h2>
+                    <p class="subtitle">معلومات عن القسم من واقع التجربة</p>
+                    <h3>مميزات القسم</h3>
+                    <ul class="pros">
+                        <li>هتدرس الصحافة والإعلام بشكل متخصص مع التركيز على الجانب التربوي.</li>
+                        <li>بتتعلم مهارات الإنتاج الإعلامي والتصوير والمونتاج الإخباري.</li>
+                        <li>القسم بيفتحلك مجالات في الإعلام المدرسي والصحافة التربوية.</li>
+                        <li>الدكاترة متعاونين وبيشجعوا الطلبة على المشاريع العملية.</li>
+                    </ul>
+                    <h3>عيوب القسم</h3>
+                    <ul class="cons">
+                        <li>المحتوى النظري كبير نسبياً ومحتاج متابعة مستمرة.</li>
+                        <li>سوق العمل في الإعلام التربوي محتاج تطوير منك شخصياً بعد التخرج.</li>
+                        <li>التدريب العملي مهم جداً وهتحتاج تجهيزات خاصة (كاميرا، لاب توب).</li>
+                    </ul>
+                    <hr class="divider">
+                    <div class="highlight-box">
+                        <h4>💡 نصيحة</h4>
+                        <p style="font-size:14px;line-height:1.8;">لو بتحب الإعلام والصحافة وعندك شغف بالمجال الإعلامي، القسم هيكون مناسب ليك. حاول تطور نفسك في التصوير والمونتاج من دلوقتي.</p>
+                    </div>
+                `,
+                'الاقتصاد المنزلي': `
+                    <h2>🏠 قسم الاقتصاد المنزلي</h2>
+                    <p class="subtitle">معلومات عن القسم من واقع التجربة</p>
+                    <h3>مميزات القسم</h3>
+                    <ul class="pros">
+                        <li>هتدرس التغذية وعلوم الأطعمة وإدارة المنزل بشكل علمي.</li>
+                        <li>القسم مناسب جداً للي حابب يشتغل في مجال التدريس أو التوعية الأسرية.</li>
+                        <li>الدكاترة بيشجعوا على المشاريع العملية والتطبيقية.</li>
+                        <li>بتتخرج ومعاك بكالوريوس تربوي يؤهلك للتدريس فوراً.</li>
+                    </ul>
+                    <h3>عيوب القسم</h3>
+                    <ul class="cons">
+                        <li>بعض الناس بتاخد فكرة نمطية عن القسم، لكن الحقيقة إنه علمي وعملي جداً.</li>
+                        <li>المحتوى الدراسي متنوع وبيحتاج تنظيم وقت كويس.</li>
+                        <li>التطبيق العملي مهم وهتحتاج أدوات وخامات في بعض المواد.</li>
+                    </ul>
+                    <hr class="divider">
+                    <div class="highlight-box">
+                        <h4>💡 نصيحة</h4>
+                        <p style="font-size:14px;line-height:1.8;">لو مهتم بالتغذية والاقتصاد المنزلي وعايز تشتغل في التدريس، القسم ده اختيار ممتاز ليك.</p>
+                    </div>
+                `,
+                'التربية الفنية': `
+                    <h2>🎨 قسم التربية الفنية</h2>
+                    <p class="subtitle">معلومات عن القسم من واقع التجربة</p>
+                    <h3>مميزات القسم</h3>
+                    <ul class="pros">
+                        <li>هتدرس الرسم والتصميم والفنون التشكيلية بشكل أكاديمي.</li>
+                        <li>القسم بيفتحلك مجال التدريس وكمان العمل الحر في الفنون.</li>
+                        <li>الدكاترة فنانين محترفين وبيشجعوا الإبداع والابتكار.</li>
+                        <li>بتتخرج ومعاك بكالوريوس تربوي يؤهلك للتدريس.</li>
+                    </ul>
+                    <h3>عيوب القسم</h3>
+                    <ul class="cons">
+                        <li>الأدوات الفنية والخامات مكلفة شوية وهتصرف عليها باستمرار.</li>
+                        <li>المشاريع الفنية بتاخد وقت كبير ومحتاجة صبر والتزام.</li>
+                        <li>سوق العمل في الفنون محتاج منك تسويق لنفسك كويس.</li>
+                    </ul>
+                    <hr class="divider">
+                    <div class="highlight-box">
+                        <h4>💡 نصيحة</h4>
+                        <p style="font-size:14px;line-height:1.8;">لو بتحب الرسم والفنون وعندك موهبة حقيقية، القسم هيساعدك تنميها وتحولها لمهنة.</p>
+                    </div>
+                `,
+                'التربية الموسيقية': `
+                    <h2>🎵 قسم التربية الموسيقية</h2>
+                    <p class="subtitle">معلومات عن القسم من واقع التجربة</p>
+                    <h3>مميزات القسم</h3>
+                    <ul class="pros">
+                        <li>هتدرس الموسيقى بشكل أكاديمي (نظري وعملي) مع آلات مختلفة.</li>
+                        <li>القسم بيفتحلك مجال تدريس الموسيقى في المدارس والمعاهد.</li>
+                        <li>الدكاترة موسيقيين محترفين وبيقدموا تدريب عملي مكثف.</li>
+                        <li>بتتخرج ومعاك بكالوريوس تربوي يؤهلك للتدريس فوراً.</li>
+                    </ul>
+                    <h3>عيوب القسم</h3>
+                    <ul class="cons">
+                        <li>المحتوى العملي كبير جداً ومحتاج تدريب يومي والتزام.</li>
+                        <li>الآلات الموسيقية مكلفة وهتحتاج تتمرن في البيت كمان.</li>
+                        <li>عدد ساعات التدريب العملي كبيرة ومرهقة شوية.</li>
+                    </ul>
+                    <hr class="divider">
+                    <div class="highlight-box">
+                        <h4>💡 نصيحة</h4>
+                        <p style="font-size:14px;line-height:1.8;">لو بتحب الموسيقى وعندك أذن موسيقية واستعداد تتمرن كتير، القسم هيكون ممتع جداً ليك.</p>
+                    </div>
+                `
+            };
+            return messages[deptName] || '<h2>🏛️ ' + deptName + '</h2><p>لا توجد معلومات تفصيلية عن هذا القسم حالياً.</p>';
+        }
+
         var currentSystem = 'modern';
         var studentData = null;
 
@@ -329,240 +415,49 @@
             return a || '—';
         }
 
-        // =============================================
-        // حساب توقع 2026
-        // =============================================
         function predict2026(score2024, score2025) {
             if (score2024 && score2025) {
-                var increase = score2025 - score2024;
-                return Math.round((score2025 + increase * 0.6) * 10) / 10;
+                return Math.round((score2025 + (score2025 - score2024) * 0.6) * 10) / 10;
             } else if (score2025) {
                 return Math.round((score2025 + 3) * 10) / 10;
-            } else if (score2024) {
-                return Math.round((score2024 + 6) * 10) / 10;
             }
             return null;
         }
 
-        // =============================================
-        // إيجاد أفضل قسم للطالب
-        // =============================================
         function findBestDepartment(score, branch) {
-            var best = null;
-            var minDiff = Infinity;
-
+            var best = null, minDiff = Infinity;
             Object.keys(TANSIQ_DATA).forEach(function(name) {
-                var data = TANSIQ_DATA[name];
-                var score2025 = data['2025'] ? data['2025'][branch] : null;
-                var score2024 = data['2024'] ? data['2024'][branch] : null;
-                var pred2026 = predict2026(score2024, score2025);
-
-                if (pred2026) {
-                    var diff = score - pred2026;
-                    if (diff >= 0 && diff < minDiff) {
-                        minDiff = diff;
-                        best = { name: name, score2025: score2025, pred2026: pred2026, diff: diff };
-                    }
+                var d = TANSIQ_DATA[name];
+                var s25 = d['2025'] ? d['2025'][branch] : null;
+                var s24 = d['2024'] ? d['2024'][branch] : null;
+                var p26 = predict2026(s24, s25);
+                if (p26) {
+                    var diff = score - p26;
+                    if (diff >= 0 && diff < minDiff) { minDiff = diff; best = { name: name, score2025: s25, pred2026: p26, diff: diff }; }
                 }
             });
-
             if (!best) {
                 Object.keys(TANSIQ_DATA).forEach(function(name) {
-                    var data = TANSIQ_DATA[name];
-                    var score2025 = data['2025'] ? data['2025'][branch] : null;
-                    var score2024 = data['2024'] ? data['2024'][branch] : null;
-                    var pred2026 = predict2026(score2024, score2025);
-                    if (pred2026) {
-                        var diff = score - pred2026;
-                        if (!best || diff > best.diff) {
-                            best = { name: name, score2025: score2025, pred2026: pred2026, diff: diff };
-                        }
+                    var d = TANSIQ_DATA[name];
+                    var s25 = d['2025'] ? d['2025'][branch] : null;
+                    var s24 = d['2024'] ? d['2024'][branch] : null;
+                    var p26 = predict2026(s24, s25);
+                    if (p26 && (!best || (score - p26) > best.diff)) {
+                        best = { name: name, score2025: s25, pred2026: p26, diff: score - p26 };
                     }
                 });
             }
             return best;
         }
 
-        // =============================================
-        // جلب البيانات
-        // =============================================
-        async function fetchViaProxy(url) {
-            await ensureConfig();
-            try {
-                var fullUrl = window.CONFIG.proxyUrl + encodeURIComponent(url);
-                var response = await fetch(fullUrl, { signal: AbortSignal.timeout(window.CONFIG.timeout) });
-                if (response.ok) return await response.text();
-            } catch (e) {}
-            return null;
-        }
-
-        async function fetchStudentFromSource(seatNumber, systemType) {
-            var system = systemType === 'modern' ? 's1' : 's2';
-            var url = window.CONFIG.sourceDomain + '/index.php?system=' + system + '&t=glos&k=' + seatNumber;
-            var html = await fetchViaProxy(url);
-            if (!html) return null;
-
-            var nameMatch = html.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
-            var scoreMatch = html.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
-            var statusMatch = html.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
-            var branchMatch = html.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
-
-            if (nameMatch && scoreMatch) {
-                return {
-                    seating_no: seatNumber,
-                    arabic_name: nameMatch[1].trim(),
-                    total_degree: scoreMatch[1].trim(),
-                    max_degree: scoreMatch[2].trim(),
-                    status: statusMatch ? statusMatch[1].trim() : '',
-                    branch: branchMatch ? branchMatch[1].trim() : '—',
-                    detectedSystem: systemType
-                };
-            }
-            return null;
-        }
-
-        async function searchLocalFile(seatNumber) {
-            await ensureConfig();
-            try {
-                var response = await fetch(window.CONFIG.localFile);
-                if (!response.ok) return null;
-                var text = await response.text();
-                var lines = text.split('\n');
-                var maxScore = currentSystem === 'modern' ? 320 : 410;
-                for (var i = 1; i < lines.length; i++) {
-                    var parts = lines[i].split(',');
-                    if (parts.length < 3) continue;
-                    if (parts[0].trim() === seatNumber) {
-                        return {
-                            seating_no: seatNumber,
-                            arabic_name: parts[1].trim(),
-                            total_degree: parts[2].trim(),
-                            max_degree: String(maxScore),
-                            status: parts[3] ? parts[3].trim() : 'ناجح',
-                            branch: '—',
-                            detectedSystem: currentSystem
-                        };
-                    }
-                }
-                return null;
-            } catch (e) {
-                return null;
-            }
-        }
-
-        // =============================================
-        // التحقق من تطابق النظام
-        // =============================================
-        async function verifySystem(seatNumber) {
-            // نجرب النظام الحديث الأول
-            var modernResult = await fetchStudentFromSource(seatNumber, 'modern');
-            if (modernResult && currentSystem === 'modern') {
-                return { valid: true, data: modernResult };
-            }
-            
-            // نجرب النظام القديم
-            var oldResult = await fetchStudentFromSource(seatNumber, 'old');
-            if (oldResult && currentSystem === 'old') {
-                return { valid: true, data: oldResult };
-            }
-
-            // لو لقينا نتيجة في النظام التاني
-            if (modernResult && currentSystem === 'old') {
-                return { valid: false, message: '⚠️ رقم الجلوس هذا تابع للنظام <strong>الحديث</strong> (من 320). الرجاء اختيار تبويب "نظام حديث".', wrongSystem: 'modern' };
-            }
-            if (oldResult && currentSystem === 'modern') {
-                return { valid: false, message: '⚠️ رقم الجلوس هذا تابع للنظام <strong>القديم</strong> (من 410). الرجاء اختيار تبويب "نظام قديم".', wrongSystem: 'old' };
-            }
-
-            // لو ملقتش في الاتنين، نجرب الملف المحلي
-            var localResult = await searchLocalFile(seatNumber);
-            if (localResult) {
-                return { valid: true, data: localResult };
-            }
-
-            return { valid: false, message: '❌ لم يتم العثور على رقم الجلوس في قاعدة البيانات.', notFound: true };
-        }
-
-        // =============================================
-        // عرض النتائج
-        // =============================================
-        function renderResult(data) {
-            var score = parseFloat(data.total_degree) || 0;
-            var maxScore = parseFloat(data.max_degree) || (currentSystem === 'modern' ? 320 : 410);
-            var percentage = ((score / maxScore) * 100).toFixed(1);
-
-            studentData = data;
-
-            document.getElementById('studentName').textContent = data.arabic_name;
-            document.getElementById('statusPill').textContent = statusText(data.status);
-            document.getElementById('statusPill').className = 'status-pill ' + statusClass(data.status);
-            document.getElementById('totalScore').textContent = score.toLocaleString('ar-EG');
-            document.getElementById('scoreOutOf').textContent = 'المجموع من ' + maxScore;
-            document.getElementById('percentScore').textContent = percentage + '%';
-            document.getElementById('rollOut').textContent = data.seating_no;
-            document.getElementById('nameOut').textContent = data.arabic_name;
-            document.getElementById('totalOut').textContent = score + ' / ' + maxScore;
-            document.getElementById('branchOut').textContent = data.branch || '—';
-            document.getElementById('sysOut').textContent = currentSystem === 'modern' ? 'نظام حديث' : 'نظام قديم';
-
-            document.getElementById('result').classList.add('show');
-
-            // عرض المحتوى المناسب حسب النظام
-            var predictionContent = document.getElementById('predictionContent');
-            
-            if (currentSystem === 'modern') {
-                // النظام الحديث - عرض توقعات الأقسام
-                predictionContent.innerHTML = `
-                    <div class="dept-selector">
-                        <h3><i class="fas fa-focus"></i> اختر القسم الذي ترغب في التقديم له</h3>
-                        <select id="deptSelect" onchange="checkDepartment()">
-                            <option value="">-- اختر القسم --</option>
-                            ${Object.keys(TANSIQ_DATA).map(function(name) {
-                                return '<option value="' + name + '">' + name + '</option>';
-                            }).join('')}
-                        </select>
-                        <div class="select-hint">💡 بعد اختيار القسم، ستظهر لك نتيجة التوقع فوراً</div>
-                    </div>
-                    <div id="predictionResultBox" class="prediction-result-box"></div>
-                    <div id="recommendationBox" class="recommendation-box"></div>
-                    <div class="all-depts-section">
-                        <div class="section-title"><i class="fas fa-list"></i> جميع أقسام الكلية</div>
-                        <div class="depts-grid" id="deptsGrid"></div>
-                    </div>
-                `;
-                renderAllDepartments(data);
-            } else {
-                // النظام القديم - رسالة توضيحية
-                predictionContent.innerHTML = `
-                    <div class="old-system-notice">
-                        <div class="icon">📙</div>
-                        <h3>النظام القديم - من 410 درجة</h3>
-                        <p>عذراً، توقعات أقسام كلية التربية النوعية متاحة فقط <strong>للنظام الحديث</strong> (المجموع من 320).</p>
-                        <p style="margin-top:12px;">النظام القديم له نظام تنسيق مختلف تماماً، ولا يمكن المقارنة المباشرة مع تنسيق الأقسام المعروض.</p>
-                        <p style="margin-top:12px;font-weight:700;color:#b45309;">📌 إذا كان رقم جلوسك في النظام الحديث، الرجاء الضغط على تبويب "نظام حديث" وإعادة البحث.</p>
-                    </div>
-                `;
-            }
-
-            showDisclaimer();
-            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        // =============================================
-        // فحص القسم المختار (للنظام الحديث فقط)
-        // =============================================
         function checkDepartment() {
             if (currentSystem !== 'modern') return;
-            
             var deptName = document.getElementById('deptSelect').value;
             var predDiv = document.getElementById('predictionResultBox');
             var recDiv = document.getElementById('recommendationBox');
+            var allDepts = document.getElementById('allDeptsSection');
 
-            if (!deptName || !studentData) {
-                predDiv.classList.remove('show');
-                recDiv.classList.remove('show');
-                return;
-            }
+            if (!deptName || !studentData) { predDiv.classList.remove('show'); if(recDiv) recDiv.classList.remove('show'); return; }
 
             var score = parseFloat(studentData.total_degree) || 0;
             var branch = studentData.branch || 'أدبي';
@@ -585,6 +480,7 @@
                 html += '</div>';
                 html += '<div class="verdict yes">✅ فرصة كبيرة للقبول</div>';
                 html += '<p style="margin-top:12px;color:#059669;font-weight:600;">مجموعك أعلى من التنسيق المتوقع بـ ' + (score - pred2026).toFixed(1) + ' درجة</p>';
+                html += '<button class="details-btn" onclick="showDeptInfo(\'' + deptName + '\')">📋 مميزات وعيوب القسم</button>';
                 html += '</div>';
             } else {
                 html += '<div class="top-prediction rejected">';
@@ -598,6 +494,7 @@
                 html += '</div>';
                 html += '<div class="verdict no">❌ فرصة قبول ضعيفة</div>';
                 html += '<p style="margin-top:12px;color:#dc2626;font-weight:600;">الفرق عن التنسيق المتوقع: ' + (pred2026 - score).toFixed(1) + ' درجة</p>';
+                html += '<button class="details-btn" onclick="showDeptInfo(\'' + deptName + '\')">📋 مميزات وعيوب القسم</button>';
                 html += '</div>';
             }
 
@@ -605,44 +502,48 @@
             predDiv.classList.add('show');
 
             if (!isAccepted) {
-                showRecommendation(score, branch, deptName);
+                showRecommendation(score, branch);
+                if (allDepts) allDepts.style.display = 'block';
             } else {
-                recDiv.classList.remove('show');
-                recDiv.innerHTML = '';
+                if (recDiv) recDiv.classList.remove('show');
+                if (recDiv) recDiv.innerHTML = '';
+                if (allDepts) allDepts.style.display = 'none';
             }
         }
 
-        function showRecommendation(score, branch, rejectedDept) {
+        function showRecommendation(score, branch) {
             var best = findBestDepartment(score, branch);
             var recDiv = document.getElementById('recommendationBox');
-            if (!best) return;
+            if (!best || !recDiv) return;
 
             var html = '<div class="rec-icon">💡</div>';
-            html += '<h3>القسم الأنسب لك في 2026</h3>';
-            html += '<div class="rec-dept">🏛️ ' + best.name + '</div>';
-            
+            html += '<h3>الأقسام البديلة المناسبة ليك</h3>';
+            html += '<p style="color:#92400e;font-size:14px;">أفضل قسم ممكن تلتحق بيه: <strong>' + best.name + '</strong></p>';
             if (best.diff >= 0) {
-                html += '<div class="rec-details">✅ مجموعك (' + score + ') أعلى من التنسيق المتوقع (' + best.pred2026.toFixed(1) + ')<br>فرصتك في القبول كبيرة جداً في هذا القسم</div>';
+                html += '<p style="font-size:13px;color:#92400e;">✅ مجموعك (' + score + ') أعلى من التنسيق المتوقع (' + best.pred2026.toFixed(1) + ')</p>';
             } else {
-                html += '<div class="rec-details">⚠️ هذا أقرب قسم يمكنك الالتحاق به<br>الفارق عن التنسيق المتوقع: ' + Math.abs(best.diff).toFixed(1) + ' درجة</div>';
+                html += '<p style="font-size:13px;color:#92400e;">⚠️ الفارق عن التنسيق المتوقع: ' + Math.abs(best.diff).toFixed(1) + ' درجة</p>';
             }
-
-            html += '<div style="margin-top:16px;">';
-            html += '<span class="rec-score">📊 تنسيق 2025: ' + (best.score2025 || '—') + '</span>';
-            html += '<span class="rec-score">🎯 متوقع 2026: ' + best.pred2026.toFixed(1) + '</span>';
-            html += '<span class="rec-score">📈 مجموعك: ' + score + '</span>';
-            html += '</div>';
+            html += '<p style="margin-top:12px;font-size:13px;color:#b45309;">👇 شوف كل الأقسام المتاحة تحت</p>';
 
             recDiv.innerHTML = html;
             recDiv.classList.add('show');
         }
 
+        function showDeptInfo(deptName) {
+            document.getElementById('modalBody').innerHTML = getDeptMessage(deptName);
+            document.getElementById('modalOverlay').classList.add('show');
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== document.getElementById('modalOverlay')) return;
+            document.getElementById('modalOverlay').classList.remove('show');
+        }
+
         function renderAllDepartments(student) {
-            if (currentSystem !== 'modern') return;
-            
+            if (currentSystem !== 'modern') return '';
             var grid = document.getElementById('deptsGrid');
-            if (!grid) return;
-            
+            if (!grid) return '';
             var score = parseFloat(student.total_degree) || 0;
             var branch = student.branch || 'أدبي';
             var best = findBestDepartment(score, branch);
@@ -653,101 +554,133 @@
                 var score2024 = data['2024'] ? data['2024'][branch] : null;
                 var pred2026 = predict2026(score2024, score2025);
                 var isRecommended = best && best.name === name;
+                var tagClass = 'red', tagText = 'فرصة ضعيفة';
+                if (pred2026 && score >= pred2026) { tagClass = 'green'; tagText = 'فرصة ممتازة'; }
+                else if (pred2026 && score >= pred2026 - 3) { tagClass = 'yellow'; tagText = 'فرصة متوسطة'; }
 
-                var tagClass = 'red';
-                var tagText = 'فرصة ضعيفة';
-                if (pred2026 && score >= pred2026) {
-                    tagClass = 'green';
-                    tagText = 'فرصة ممتازة';
-                } else if (pred2026 && score >= pred2026 - 3) {
-                    tagClass = 'yellow';
-                    tagText = 'فرصة متوسطة';
-                }
-
-                return `
-                    <div class="dept-card ${isRecommended ? 'recommended' : ''}">
-                        <h4>🏛️ ${name}</h4>
-                        <div class="dept-desc">${DEPT_DESC[name] || ''}</div>
-                        <div class="dept-stats">
-                            <div class="dept-stat">
-                                <div class="num">${score2025 || '—'}</div>
-                                <div class="lbl">تنسيق 2025</div>
-                            </div>
-                            <div class="dept-stat">
-                                <div class="num">${pred2026 ? pred2026.toFixed(1) : '—'}</div>
-                                <div class="lbl">متوقع 2026</div>
-                            </div>
-                            <span class="tag ${tagClass}">${tagText}</span>
-                        </div>
-                    </div>
-                `;
+                return '<div class="dept-card' + (isRecommended ? ' recommended' : '') + '">' +
+                    '<h4>🏛️ ' + name + '</h4>' +
+                    '<div class="dept-desc">' + (DEPT_DESC[name] || '') + '</div>' +
+                    '<div class="dept-stats">' +
+                    '<div class="dept-stat"><div class="num">' + (score2025 || '—') + '</div><div class="lbl">تنسيق 2025</div></div>' +
+                    '<div class="dept-stat"><div class="num">' + (pred2026 ? pred2026.toFixed(1) : '—') + '</div><div class="lbl">متوقع 2026</div></div>' +
+                    '<span class="tag ' + tagClass + '">' + tagText + '</span></div>' +
+                    '<button class="info-btn" onclick="showDeptInfo(\'' + name + '\')">📋 مميزات وعيوب القسم</button></div>';
             }).join('');
         }
 
-        function showDisclaimer() {
-            var el = document.getElementById('disclaimerBox');
-            if (currentSystem === 'old') {
-                el.innerHTML = `
-                    <div class="disclaimer-box">
-                        <h4><i class="fas fa-exclamation-triangle"></i> تنويه مهم للنظام القديم</h4>
-                        <p>النظام القديم (من 410 درجة) له نظام تنسيق مختلف. توقعات الأقسام المعروضة هنا مخصصة للنظام الحديث فقط.</p>
-                        <p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p>
+        const DEPT_DESC = {
+            'تكنولوجيا التعليم': 'توظيف التكنولوجيا الحديثة في العملية التعليمية وتطوير المناهج',
+            'الإعلام التربوي': 'الإعلام والصحافة والإنتاج الإعلامي الموجه للمؤسسات التعليمية',
+            'الاقتصاد المنزلي': 'الاقتصاد المنزلي والتربية الأسرية والتغذية وعلوم الأطعمة',
+            'التربية الفنية': 'الفنون التشكيلية والتربية الفنية وتنمية الإبداع',
+            'التربية الموسيقية': 'الموسيقى والتربية الموسيقية والعزف والتأليف والأداء الصوتي'
+        };
+
+        async function fetchStudentFromSource(seatNumber, systemType) {
+            var system = systemType === 'modern' ? 's1' : 's2';
+            var url = window.CONFIG.sourceDomain + '/index.php?system=' + system + '&t=glos&k=' + seatNumber;
+            try {
+                var response = await fetch(window.CONFIG.proxyUrl + encodeURIComponent(url), { signal: AbortSignal.timeout(window.CONFIG.timeout) });
+                if (!response.ok) return null;
+                var html = await response.text();
+                var nameMatch = html.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
+                var scoreMatch = html.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
+                var statusMatch = html.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
+                var branchMatch = html.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
+                if (nameMatch && scoreMatch) {
+                    return { seating_no: seatNumber, arabic_name: nameMatch[1].trim(), total_degree: scoreMatch[1].trim(), max_degree: scoreMatch[2].trim(), status: statusMatch ? statusMatch[1].trim() : '', branch: branchMatch ? branchMatch[1].trim() : '—', detectedSystem: systemType };
+                }
+            } catch(e) {}
+            return null;
+        }
+
+        async function verifySystem(seatNumber) {
+            var modernResult = await fetchStudentFromSource(seatNumber, 'modern');
+            if (modernResult && currentSystem === 'modern') return { valid: true, data: modernResult };
+            var oldResult = await fetchStudentFromSource(seatNumber, 'old');
+            if (oldResult && currentSystem === 'old') return { valid: true, data: oldResult };
+            if (modernResult && currentSystem === 'old') return { valid: false, message: '⚠️ رقم الجلوس هذا تابع للنظام <strong>الحديث</strong> (من 320). الرجاء اختيار تبويب "نظام حديث".', wrongSystem: 'modern' };
+            if (oldResult && currentSystem === 'modern') return { valid: false, message: '⚠️ رقم الجلوس هذا تابع للنظام <strong>القديم</strong> (من 410). الرجاء اختيار تبويب "نظام قديم".', wrongSystem: 'old' };
+            return { valid: false, message: '❌ لم يتم العثور على رقم الجلوس في قاعدة البيانات.', notFound: true };
+        }
+
+        function renderResult(data) {
+            var score = parseFloat(data.total_degree) || 0;
+            var maxScore = parseFloat(data.max_degree) || (currentSystem === 'modern' ? 320 : 410);
+            var percentage = ((score / maxScore) * 100).toFixed(1);
+            studentData = data;
+
+            document.getElementById('studentName').textContent = data.arabic_name;
+            document.getElementById('statusPill').textContent = statusText(data.status);
+            document.getElementById('statusPill').className = 'status-pill ' + statusClass(data.status);
+            document.getElementById('totalScore').textContent = score.toLocaleString('ar-EG');
+            document.getElementById('scoreOutOf').textContent = 'المجموع من ' + maxScore;
+            document.getElementById('percentScore').textContent = percentage + '%';
+            document.getElementById('rollOut').textContent = data.seating_no;
+            document.getElementById('nameOut').textContent = data.arabic_name;
+            document.getElementById('totalOut').textContent = score + ' / ' + maxScore;
+            document.getElementById('branchOut').textContent = data.branch || '—';
+            document.getElementById('sysOut').textContent = currentSystem === 'modern' ? 'نظام حديث' : 'نظام قديم';
+            document.getElementById('result').classList.add('show');
+
+            var predictionContent = document.getElementById('predictionContent');
+            if (currentSystem === 'modern') {
+                predictionContent.innerHTML = `
+                    <div class="dept-selector">
+                        <h3><i class="fas fa-focus"></i> اختر القسم الذي ترغب في التقديم له</h3>
+                        <select id="deptSelect" onchange="checkDepartment()">
+                            <option value="">-- اختر القسم --</option>
+                            ${Object.keys(TANSIQ_DATA).map(function(n){return '<option value="'+n+'">'+n+'</option>';}).join('')}
+                        </select>
+                        <div class="select-hint">💡 بعد اختيار القسم، ستظهر لك نتيجة التوقع فوراً</div>
+                    </div>
+                    <div id="predictionResultBox" class="prediction-result-box"></div>
+                    <div id="recommendationBox" class="recommendation-box"></div>
+                    <div class="all-depts-section" id="allDeptsSection">
+                        <div class="section-title"><i class="fas fa-list"></i> جميع أقسام الكلية</div>
+                        <div class="depts-grid" id="deptsGrid"></div>
                     </div>
                 `;
+                renderAllDepartments(data);
             } else {
-                el.innerHTML = `
-                    <div class="disclaimer-box">
-                        <h4><i class="fas fa-info-circle"></i> تنويه مهم</h4>
-                        <p>التوقعات المعروضة تقديرية لأغراض إرشادية فقط، وتستند إلى تحليل بيانات التنسيق في 2024 و2025 مع توقع زيادة معتدلة لعام 2026.</p>
-                        <p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p>
+                predictionContent.innerHTML = `
+                    <div class="old-system-notice">
+                        <div class="icon">📙</div>
+                        <h3>النظام القديم - من 410 درجة</h3>
+                        <p>عذراً، توقعات أقسام كلية التربية النوعية متاحة فقط <strong>للنظام الحديث</strong> (المجموع من 320).</p>
+                        <p style="margin-top:12px;">النظام القديم له نظام تنسيق مختلف تماماً، ولا يمكن المقارنة المباشرة مع تنسيق الأقسام المعروض.</p>
                     </div>
                 `;
             }
+            showDisclaimer();
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showDisclaimer() {
+            document.getElementById('disclaimerBox').innerHTML = currentSystem === 'old' ? `
+                <div class="disclaimer-box"><h4><i class="fas fa-exclamation-triangle"></i> تنويه مهم للنظام القديم</h4><p>النظام القديم له نظام تنسيق مختلف. توقعات الأقسام مخصصة للنظام الحديث فقط.</p></div>
+            ` : `
+                <div class="disclaimer-box"><h4><i class="fas fa-info-circle"></i> تنويه مهم</h4><p>التوقعات تقديرية لأغراض إرشادية فقط.</p></div>
+            `;
         }
 
         async function doSearch() {
-            await ensureConfig();
             var seatNumber = document.getElementById('seatInput').value.trim();
-
             document.getElementById('result').classList.remove('show');
             clearMsg();
-
-            if (!seatNumber || seatNumber.length < 6) {
-                showMsg('⚠️ برجاء إدخال رقم جلوس صحيح (6 أرقام على الأقل)', 'error');
-                return;
-            }
-
+            if (!seatNumber || seatNumber.length < 6) { showMsg('⚠️ برجاء إدخال رقم جلوس صحيح', 'error'); return; }
             setLoading(true);
             try {
                 var verification = await verifySystem(seatNumber);
-                
-                if (verification.valid && verification.data) {
-                    renderResult(verification.data);
-                } else if (verification.wrongSystem) {
-                    // الطالب كتب رقم جلوس في النظام الغلط
-                    showMsg(verification.message, 'warning');
-                    document.getElementById('result').classList.remove('show');
-                } else {
-                    showMsg(verification.message || '❌ لم يتم العثور على رقم الجلوس في قاعدة البيانات', 'error');
-                    document.getElementById('result').classList.remove('show');
-                }
-            } catch (error) {
-                showMsg('❌ حدث خطأ أثناء جلب البيانات', 'error');
-            } finally {
-                setLoading(false);
-            }
+                if (verification.valid && verification.data) renderResult(verification.data);
+                else showMsg(verification.message, verification.wrongSystem ? 'warning' : 'error');
+            } catch(e) { showMsg('❌ حدث خطأ', 'error'); }
+            finally { setLoading(false); }
         }
 
-        document.getElementById('seatInput').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doSearch();
-            }
-        });
-
-        window.onload = function() {
-            document.getElementById('seatInput').focus();
-        };
+        document.getElementById('seatInput').addEventListener('keydown', function(e) { if (e.key === 'Enter') { e.preventDefault(); doSearch(); } });
+        window.onload = function() { document.getElementById('seatInput').focus(); };
     </script>
 </body>
 </html>
