@@ -15,7 +15,7 @@
 
     <style>
         /* =============================================
-           جميع الستايلات من الكود السابق (محتفظ بنفس التصميم)
+           جميع الستايلات (محتفظ بنفس التصميم)
            ============================================= */
         :root {
             --navy: #07162d;
@@ -233,47 +233,6 @@
             color: var(--blue);
         }
 
-        .mode-tabs {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 18px;
-            background: #f1f5f9;
-            padding: 5px;
-            border-radius: 14px;
-        }
-
-        .mode-tab {
-            flex: 1;
-            padding: 10px 16px;
-            border: none;
-            background: transparent;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--muted);
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .mode-tab.active {
-            background: #fff;
-            color: var(--text);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-        }
-
-        .mode-tab i {
-            font-size: 15px;
-        }
-
-        .mode-tab.active i {
-            color: var(--blue);
-        }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -426,53 +385,6 @@
             background: #fffbeb;
             color: #92400e;
             border: 1px solid #fcd34d;
-        }
-
-        .results-list {
-            margin-top: 18px;
-        }
-
-        .result-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 20px;
-            margin-bottom: 8px;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            cursor: pointer;
-            transition: all 0.2s;
-            gap: 14px;
-        }
-
-        .result-item:hover {
-            border-color: var(--blue);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transform: translateX(-4px);
-        }
-
-        .result-item .ri-name {
-            font-weight: 800;
-            font-size: 16px;
-            color: var(--text);
-        }
-
-        .result-item .ri-seat {
-            font-size: 12px;
-            color: var(--muted);
-            margin-top: 2px;
-        }
-
-        .result-item .ri-score {
-            background: linear-gradient(145deg, #07162d, #103c75);
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-weight: 900;
-            font-size: 20px;
-            text-align: center;
-            min-width: 80px;
         }
 
         .result-wrap {
@@ -1171,16 +1083,6 @@
             color: #fbbf24;
             border-color: #4a3a0a;
         }
-        body.dark .result-item {
-            background: #1a2538;
-            border-color: #2a3a55;
-        }
-        body.dark .result-item .ri-name {
-            color: #f0f4ff;
-        }
-        body.dark .result-item:hover {
-            border-color: var(--blue);
-        }
         body.dark .chance-header {
             color: #b8c9e8;
         }
@@ -1218,16 +1120,6 @@
         }
         body.dark .sys-tab.active small {
             color: #60a5fa;
-        }
-        body.dark .mode-tabs {
-            background: #0f1724;
-        }
-        body.dark .mode-tab {
-            color: #8a9bb5;
-        }
-        body.dark .mode-tab.active {
-            background: #1a2538;
-            color: #f0f4ff;
         }
         body.dark .main-input {
             background: #0f1724;
@@ -1278,10 +1170,6 @@
             .year-tag {
                 font-size: 11px;
             }
-            .mode-tab {
-                font-size: 12px;
-                padding: 8px 12px;
-            }
             .depts-grid {
                 grid-template-columns: 1fr;
             }
@@ -1309,8 +1197,7 @@
             .help-text,
             .msg-box,
             .privacy-note,
-            .site-footer,
-            .devtools-warning {
+            .site-footer {
                 display: none !important;
             }
             .app-wrap {
@@ -1358,20 +1245,11 @@
 
         <section class="card">
             <div class="sys-tabs">
-                <button class="sys-tab active" id="sysS1" onclick="selectSystem('s1')">
+                <button class="sys-tab active" id="sysS1" onclick="selectSystem('modern')">
                     📘 نظام حديث <small>المجموع من 320</small>
                 </button>
-                <button class="sys-tab" id="sysS2" onclick="selectSystem('s2')">
+                <button class="sys-tab" id="sysS2" onclick="selectSystem('old')">
                     📙 نظام قديم <small>المجموع من 410</small>
-                </button>
-            </div>
-
-            <div class="mode-tabs" id="modeTabs">
-                <button class="mode-tab active" onclick="switchMode('seat', this)">
-                    <i class="fas fa-id-card"></i> رقم الجلوس
-                </button>
-                <button class="mode-tab" onclick="switchMode('name', this)">
-                    <i class="fas fa-user"></i> الاسم
                 </button>
             </div>
 
@@ -1382,21 +1260,7 @@
                         <i class="fas fa-search"></i>
                         <input id="seatInput" class="main-input" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="مثال: 2220361">
                     </div>
-                    <button class="btn-go" id="searchBtnSeat" onclick="doSearch()">
-                        <span class="spinner"></span>
-                        <span class="btn-label">بحث</span>
-                    </button>
-                </div>
-            </div>
-
-            <div id="nameGroup" class="hidden">
-                <label class="form-label" for="nameInput">اسم الطالب</label>
-                <div class="form-row">
-                    <div class="input-box">
-                        <i class="fas fa-user"></i>
-                        <input id="nameInput" class="main-input" autocomplete="off" placeholder="مثال: محمد أحمد">
-                    </div>
-                    <button class="btn-go" id="searchBtnName" onclick="doSearch()">
+                    <button class="btn-go" id="searchBtn" onclick="doSearch()">
                         <span class="spinner"></span>
                         <span class="btn-label">بحث</span>
                     </button>
@@ -1404,7 +1268,6 @@
             </div>
 
             <div id="message" class="msg-box" role="status" aria-live="polite"></div>
-            <div id="nameResults" class="results-list"></div>
 
             <div id="result" class="result-wrap" aria-live="polite">
                 <article class="result-card">
@@ -1522,7 +1385,7 @@
         ensureConfig();
 
         // =============================================
-        // بيانات تنسيق الأقسام (مصححة - التنسيق بيعلي كل سنة)
+        // بيانات تنسيق الأقسام (التنسيق بيعلي كل سنة)
         // =============================================
         const TANSIQ_DATA = {
             'تكنولوجيا التعليم': {
@@ -1550,64 +1413,29 @@
         // =============================================
         // المتغيرات العامة
         // =============================================
-        var _cs = 's1',
-            _cm = 'seat',
-            _sd = null,
-            _sb = '',
-            _ar = [],
-            _dc = 0;
+        var currentSystem = 'modern';
+        var studentData = null;
 
         // =============================================
         // الدوال الأساسية
         // =============================================
-        function selectSystem(a) {
-            _cs = a;
-            document.getElementById('sysS1').classList.toggle('active', a === 's1');
-            document.getElementById('sysS2').classList.toggle('active', a === 's2');
-            var b = document.getElementById('modeTabs');
-            var c = document.getElementById('nameGroup');
-            if (a === 's2') {
-                b.classList.add('hidden');
-                c.classList.add('hidden');
-                document.getElementById('seatGroup').classList.remove('hidden');
-                _cm = 'seat';
-            } else {
-                b.classList.remove('hidden');
-                if (_cm === 'name') {
-                    document.getElementById('seatGroup').classList.add('hidden');
-                    c.classList.remove('hidden');
-                } else {
-                    document.getElementById('seatGroup').classList.remove('hidden');
-                    c.classList.add('hidden');
-                }
-            }
+        function selectSystem(sys) {
+            currentSystem = sys;
+            document.getElementById('sysS1').classList.toggle('active', sys === 'modern');
+            document.getElementById('sysS2').classList.toggle('active', sys === 'old');
             resetAll();
         }
 
-        function switchMode(a, b) {
-            if (_cs === 's2') return;
-            _cm = a;
-            document.querySelectorAll('#modeTabs .mode-tab').forEach(function(c) {
-                c.classList.remove('active');
-            });
-            b.classList.add('active');
-            document.getElementById('seatGroup').classList.toggle('hidden', a !== 'seat');
-            document.getElementById('nameGroup').classList.toggle('hidden', a !== 'name');
-            resetAll();
-            if (a === 'seat') document.getElementById('seatInput').focus();
-            else document.getElementById('nameInput').focus();
+        function setLoading(loading) {
+            var btn = document.getElementById('searchBtn');
+            btn.disabled = loading;
+            btn.classList.toggle('loading', loading);
         }
 
-        function setLoading(a) {
-            var b = _cm === 'seat' ? document.getElementById('searchBtnSeat') : document.getElementById('searchBtnName');
-            b.disabled = a;
-            b.classList.toggle('loading', a);
-        }
-
-        function showMsg(a, b) {
-            var c = document.getElementById('message');
-            c.textContent = a;
-            c.className = 'msg-box show ' + (b || 'error');
+        function showMsg(msg, type) {
+            var el = document.getElementById('message');
+            el.textContent = msg;
+            el.className = 'msg-box show ' + (type || 'error');
         }
 
         function clearMsg() {
@@ -1629,132 +1457,104 @@
 
         function resetAll() {
             document.getElementById('seatInput').value = '';
-            document.getElementById('nameInput').value = '';
             document.getElementById('result').classList.remove('show');
-            document.getElementById('nameResults').innerHTML = '';
             document.getElementById('message').className = 'msg-box';
             document.getElementById('predictionDetails').style.display = 'none';
-            _ar = [];
-            _dc = 0;
-            _sd = null;
-            _sb = '';
-            if (_cm === 'seat') document.getElementById('seatInput').focus();
-            else document.getElementById('nameInput').focus();
+            studentData = null;
+            document.getElementById('seatInput').focus();
         }
 
         // =============================================
         // جلب البيانات من نذاكر
         // =============================================
-        async function fetchViaProxy(a) {
+        async function fetchViaProxy(url) {
             await ensureConfig();
             try {
-                var b = window.CONFIG.proxyUrl + encodeURIComponent(a);
-                var c = await fetch(b, { signal: AbortSignal.timeout(window.CONFIG.timeout) });
-                if (c.ok) return await c.text();
-            } catch (d) {}
+                var fullUrl = window.CONFIG.proxyUrl + encodeURIComponent(url);
+                var response = await fetch(fullUrl, { signal: AbortSignal.timeout(window.CONFIG.timeout) });
+                if (response.ok) return await response.text();
+            } catch (e) {}
             return null;
         }
 
-        async function fetchStudentFromSource(a) {
-            var b = await fetchViaProxy(window.CONFIG.sourceDomain + '/index.php?system=' + _cs + '&t=glos&k=' + a);
-            if (!b) return null;
-            var c = b.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
-            var d = b.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
-            var e = b.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
-            var f = '';
-            var g = b.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
-            if (g) f = g[1].trim();
-            if (c && d) {
+        async function fetchStudentFromSource(seatNumber) {
+            var system = currentSystem === 'modern' ? 's1' : 's2';
+            var url = window.CONFIG.sourceDomain + '/index.php?system=' + system + '&t=glos&k=' + seatNumber;
+            var html = await fetchViaProxy(url);
+            if (!html) return null;
+
+            var nameMatch = html.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
+            var scoreMatch = html.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
+            var statusMatch = html.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
+            var branchMatch = html.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
+
+            if (nameMatch && scoreMatch) {
                 return {
-                    seating_no: a,
-                    arabic_name: c[1].trim(),
-                    total_degree: d[1].trim(),
-                    max_degree: d[2].trim(),
-                    status: e ? e[1].trim() : '',
-                    branch: f
+                    seating_no: seatNumber,
+                    arabic_name: nameMatch[1].trim(),
+                    total_degree: scoreMatch[1].trim(),
+                    max_degree: scoreMatch[2].trim(),
+                    status: statusMatch ? statusMatch[1].trim() : '',
+                    branch: branchMatch ? branchMatch[1].trim() : '—'
                 };
             }
             return null;
         }
 
-        async function searchLocalFile(a, b) {
-            b = b || false;
+        async function searchLocalFile(seatNumber) {
             await ensureConfig();
             try {
-                var c = await fetch(window.CONFIG.localFile);
-                if (!c.ok) return b ? [] : null;
-                var d = await c.text();
-                var e = d.split('\n');
-                var f = a.replace(/\s+/g, ' ').toLowerCase();
-                var g = _cs === 's1' ? 320 : 410;
-                var h = [];
-                for (var i = 1; i < e.length; i++) {
-                    var j = e[i].split(',');
-                    if (j.length < 3) continue;
-                    var k = j[0].trim(),
-                        l = j[1].trim(),
-                        m = j[2].trim(),
-                        n = j[3] ? j[3].trim() : '';
-                    var o = l.replace(/\s+/g, ' ').toLowerCase();
-                    if (b && o.includes(f)) {
-                        var p = '—';
-                        if (_cs === 's1') {
-                            try {
-                                var q = await fetchStudentFromSource(k);
-                                if (q && q.branch) p = q.branch;
-                            } catch (r) {}
-                        }
-                        h.push({
-                            seating_no: k,
-                            arabic_name: l,
-                            total_degree: m,
-                            max_degree: String(g),
-                            status: n,
-                            branch: p
-                        });
-                    } else if (!b && k === a) {
+                var response = await fetch(window.CONFIG.localFile);
+                if (!response.ok) return null;
+                var text = await response.text();
+                var lines = text.split('\n');
+                var maxScore = currentSystem === 'modern' ? 320 : 410;
+
+                for (var i = 1; i < lines.length; i++) {
+                    var parts = lines[i].split(',');
+                    if (parts.length < 3) continue;
+                    var seat = parts[0].trim();
+                    if (seat === seatNumber) {
                         return {
-                            seating_no: k,
-                            arabic_name: l,
-                            total_degree: m,
-                            max_degree: String(g),
-                            status: n,
+                            seating_no: seat,
+                            arabic_name: parts[1].trim(),
+                            total_degree: parts[2].trim(),
+                            max_degree: String(maxScore),
+                            status: parts[3] ? parts[3].trim() : 'ناجح',
                             branch: '—'
                         };
                     }
                 }
-                return b ? h : null;
-            } catch (s) {
-                return b ? [] : null;
+                return null;
+            } catch (e) {
+                return null;
             }
         }
 
         // =============================================
         // عرض النتائج
         // =============================================
-        function renderResult(a) {
-            var b = parseFloat(a.total_degree) || 0;
-            var c = parseFloat(a.max_degree) || (_cs === 's1' ? 320 : 410);
-            var d = ((b / c) * 100).toFixed(1);
-            var e = statusText(a.status);
-            var f = a.branch || '—';
+        function renderResult(data) {
+            var score = parseFloat(data.total_degree) || 0;
+            var maxScore = parseFloat(data.max_degree) || (currentSystem === 'modern' ? 320 : 410);
+            var percentage = ((score / maxScore) * 100).toFixed(1);
+            var status = statusText(data.status);
+            var branch = data.branch || '—';
 
-            _sd = a;
-            _sb = f;
+            studentData = data;
 
-            document.getElementById('studentName').textContent = a.arabic_name;
-            document.getElementById('statusPill').textContent = e;
-            document.getElementById('statusPill').className = 'status-pill ' + statusClass(a.status);
-            document.getElementById('totalScore').textContent = b.toLocaleString('ar-EG');
-            document.getElementById('scoreOutOf').textContent = 'المجموع من ' + c;
-            document.getElementById('percentScore').textContent = d + '%';
-            document.getElementById('rollOut').textContent = a.seating_no;
-            document.getElementById('nameOut').textContent = a.arabic_name;
-            document.getElementById('totalOut').textContent = b + ' / ' + c;
-            document.getElementById('branchOut').textContent = f;
-            document.getElementById('sysOut').textContent = _cs === 's1' ? 'نظام حديث' : 'نظام قديم';
+            document.getElementById('studentName').textContent = data.arabic_name;
+            document.getElementById('statusPill').textContent = status;
+            document.getElementById('statusPill').className = 'status-pill ' + statusClass(data.status);
+            document.getElementById('totalScore').textContent = score.toLocaleString('ar-EG');
+            document.getElementById('scoreOutOf').textContent = 'المجموع من ' + maxScore;
+            document.getElementById('percentScore').textContent = percentage + '%';
+            document.getElementById('rollOut').textContent = data.seating_no;
+            document.getElementById('nameOut').textContent = data.arabic_name;
+            document.getElementById('totalOut').textContent = score + ' / ' + maxScore;
+            document.getElementById('branchOut').textContent = branch;
+            document.getElementById('sysOut').textContent = currentSystem === 'modern' ? 'نظام حديث' : 'نظام قديم';
 
-            document.getElementById('nameResults').innerHTML = '';
             document.getElementById('result').classList.add('show');
 
             // تعبئة قائمة الأقسام
@@ -1768,7 +1568,7 @@
                 select.appendChild(option);
             });
 
-            renderAllDepartments(a);
+            renderAllDepartments(data);
             document.getElementById('predictionDetails').style.display = 'none';
             showDisclaimer();
 
@@ -1782,7 +1582,7 @@
             var select = document.getElementById('deptSelect');
             var deptName = select.value;
 
-            if (!deptName || !_sd) {
+            if (!deptName || !studentData) {
                 document.getElementById('predictionDetails').style.display = 'none';
                 return;
             }
@@ -1792,8 +1592,8 @@
             var deptData = TANSIQ_DATA[deptName];
             if (!deptData) return;
 
-            var studentScore = parseFloat(_sd.total_degree) || 0;
-            var studentBranch = _sd.branch || 'أدبي';
+            var studentScore = parseFloat(studentData.total_degree) || 0;
+            var studentBranch = studentData.branch || 'أدبي';
 
             document.getElementById('deptName').textContent = deptName;
 
@@ -1804,7 +1604,6 @@
             var verdictClass = 'fair';
             var verdictText = '⚠️ فرصة قبول متوسطة';
             var chance = 50;
-            var allMatch = true;
 
             years.forEach(function(year) {
                 var yearData = deptData[year];
@@ -1842,14 +1641,13 @@
                 } else {
                     tdStatus.textContent = '❌ غير مؤهل';
                     tdStatus.className = 'not-match';
-                    allMatch = false;
                 }
                 tr.appendChild(tdStatus);
 
                 tbody.appendChild(tr);
             });
 
-            // حساب التوقع 2026 (التنسيق بيعلي كل سنة)
+            // حساب التوقع 2026
             var score2024 = deptData['2024'] ? deptData['2024'][studentBranch] : null;
             var score2025 = deptData['2025'] ? deptData['2025'][studentBranch] : null;
 
@@ -1858,18 +1656,14 @@
 
             if (score2024 !== null && score2024 !== undefined &&
                 score2025 !== null && score2025 !== undefined) {
-                // الزيادة من 2024 لـ 2025
                 trend = score2025 - score2024;
-                // 2026 = 2025 + الزيادة (التنسيق بيعلي)
                 pred2026 = score2025 + trend;
             } else if (score2025 !== null && score2025 !== undefined) {
-                // لو مفيش 2024، نفترض زيادة 3-5 درجات
                 pred2026 = score2025 + 4;
             } else if (score2024 !== null && score2024 !== undefined) {
                 pred2026 = score2024 + 8;
             }
 
-            // تقييم الفرصة
             if (pred2026 !== null && studentScore >= pred2026) {
                 chance = Math.min(100, 80 + ((studentScore - pred2026) / pred2026) * 20);
                 if (chance >= 80) { verdictClass = 'excellent';
@@ -1878,19 +1672,11 @@
             } else if (pred2026 !== null && studentScore >= pred2026 - 5) {
                 chance = 50 + ((studentScore - (pred2026 - 5)) / 5) * 20;
                 verdictClass = 'fair';
-                verdictText = '⚠️ فرصة قبول متوسطة - قد تلحق بالحد الأدنى';
+                verdictText = '⚠️ فرصة قبول متوسطة';
             } else {
                 chance = Math.max(5, 30 - ((pred2026 - studentScore) / pred2026) * 20);
                 verdictClass = 'low';
-                verdictText = '❌ فرصة قبول منخفضة - حاول رفع مجموعك';
-            }
-
-            // لو القسم مش موجود
-            if (!allMatch) {
-                var alternatives = getAlternativeDepartments(studentScore, studentBranch);
-                if (alternatives.length > 0) {
-                    verdictText += ' | 💡 بدائل متاحة: ' + alternatives.slice(0, 3).join('، ');
-                }
+                verdictText = '❌ فرصة قبول منخفضة';
             }
 
             document.getElementById('verdictWrap').innerHTML =
@@ -1939,30 +1725,6 @@
             }
 
             document.getElementById('predictionDetails').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        // =============================================
-        // أقسام بديلة
-        // =============================================
-        function getAlternativeDepartments(score, branch) {
-            var alternatives = [];
-            var deptNames = Object.keys(TANSIQ_DATA);
-            var selectedDept = document.getElementById('deptSelect').value;
-
-            deptNames.forEach(function(name) {
-                if (name === selectedDept) return;
-                var data = TANSIQ_DATA[name];
-                var score2025 = data['2025'] ? data['2025'][branch] : null;
-                if (score2025 !== null && score2025 !== undefined && score >= score2025) {
-                    alternatives.push(name);
-                }
-            });
-
-            return alternatives.sort(function(a, b) {
-                var scoreA = TANSIQ_DATA[a]['2025'] ? (TANSIQ_DATA[a]['2025'][branch] || Infinity) : Infinity;
-                var scoreB = TANSIQ_DATA[b]['2025'] ? (TANSIQ_DATA[b]['2025'][branch] || Infinity) : Infinity;
-                return scoreA - scoreB;
-            });
         }
 
         // =============================================
@@ -2043,9 +1805,14 @@
         // التنويه
         // =============================================
         function showDisclaimer() {
-            var a = document.getElementById('disclaimerBox');
-            a.innerHTML =
-                '<div class="disclaimer-box"><h4><i class="fas fa-info-circle"></i> تنويه مهم</h4><p>التوقعات المعروضة تقديرية لأغراض إرشادية فقط، وتستند إلى تحليل بيانات التنسيق في السنوات السابقة. التنسيق في 2026 متوقع أن يكون أعلى من 2025 بنسبة 3-5 درجات كمتوسط.</p><p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p></div>';
+            var el = document.getElementById('disclaimerBox');
+            if (currentSystem === 'old') {
+                el.innerHTML =
+                    '<div class="disclaimer-box"><h4><i class="fas fa-exclamation-triangle"></i> تنويه للنظام القديم</h4><p>النظام القديم يعتمد على المجموع من 410 درجة. التوقعات تقديرية لأغراض إرشادية فقط.</p><p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية.</p></div>';
+            } else {
+                el.innerHTML =
+                    '<div class="disclaimer-box"><h4><i class="fas fa-info-circle"></i> تنويه مهم</h4><p>التوقعات المعروضة تقديرية لأغراض إرشادية فقط، وتستند إلى تحليل بيانات التنسيق في السنوات السابقة.</p><p style="margin-top:12px;font-weight:800;">⚠️ يرجى متابعة موقع التنسيق الرسمي للحصول على النتائج النهائية المعتمدة.</p></div>';
+            }
         }
 
         // =============================================
@@ -2053,77 +1820,35 @@
         // =============================================
         async function doSearch() {
             await ensureConfig();
-            var a = _cm === 'seat' ? document.getElementById('seatInput').value.trim() : document.getElementById('nameInput')
-                .value.trim();
+            var seatNumber = document.getElementById('seatInput').value.trim();
 
             document.getElementById('result').classList.remove('show');
-            document.getElementById('nameResults').innerHTML = '';
             clearMsg();
             document.getElementById('predictionDetails').style.display = 'none';
 
-            if (!a) {
-                showMsg('من فضلك أدخل ' + (_cm === 'seat' ? 'رقم الجلوس' : 'اسم الطالب') + ' للبحث.');
+            if (!seatNumber || seatNumber.length < 6) {
+                showMsg('⚠️ برجاء إدخال رقم جلوس صحيح (6 أرقام على الأقل)', 'error');
                 return;
             }
 
             setLoading(true);
 
             try {
-                if (_cm === 'seat') {
-                    var b = null;
-                    b = await fetchStudentFromSource(a);
-                    if (!b) b = await searchLocalFile(a);
-                    if (b) {
-                        renderResult(b);
-                    } else {
-                        showMsg('لم يتم العثور على نتيجة.');
-                    }
-                } else {
-                    var c = await searchLocalFile(a, true);
-                    if (c.length === 0) {
-                        showMsg('لم يتم العثور على نتائج.');
-                        setLoading(false);
-                        return;
-                    }
-                    _ar = c;
-                    _dc = 0;
-                    showNameResults();
+                var data = await fetchStudentFromSource(seatNumber);
+                if (!data) {
+                    data = await searchLocalFile(seatNumber);
                 }
-            } catch (d) {
-                showMsg('حدث خطأ.');
+
+                if (data) {
+                    renderResult(data);
+                } else {
+                    showMsg('❌ لم يتم العثور على رقم الجلوس في قاعدة البيانات', 'error');
+                }
+            } catch (error) {
+                showMsg('❌ حدث خطأ أثناء جلب البيانات', 'error');
             } finally {
                 setLoading(false);
             }
-        }
-
-        function showNameResults() {
-            var a = document.getElementById('nameResults');
-            var b = _ar.slice(_dc, _dc + 5);
-            var c = _cs === 's1' ? 320 : 410;
-
-            b.forEach(function(d) {
-                var e = parseFloat(d.total_degree) || 0;
-                var f = document.createElement('div');
-                f.className = 'result-item';
-                f.innerHTML = '<div><div class="ri-name">' + d.arabic_name +
-                    '</div><div class="ri-seat">رقم الجلوس: ' + d.seating_no +
-                    '</div></div><div class="ri-score">' + e +
-                    '<small style="display:block;font-size:10px;opacity:0.8">/' + c + '</small></div>';
-                f.onclick = function() { renderResult(d); };
-                a.appendChild(f);
-            });
-
-            _dc += b.length;
-
-            if (_dc < _ar.length) {
-                var d = document.createElement('button');
-                d.className = 'load-more-btn';
-                d.textContent = 'عرض المزيد (' + (_ar.length - _dc) + ' نتيجة)';
-                d.onclick = showNameResults;
-                a.appendChild(d);
-            }
-
-            if (_dc === b.length && _ar.length === 1) renderResult(_ar[0]);
         }
 
         // =============================================
@@ -2144,19 +1869,17 @@
         // =============================================
         // دعم الكيبورد
         // =============================================
-        document.querySelectorAll('.main-input').forEach(function(a) {
-            a.addEventListener('keydown', function(b) {
-                if (b.key === 'Enter') {
-                    b.preventDefault();
-                    doSearch();
-                }
-            });
+        document.getElementById('seatInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                doSearch();
+            }
         });
 
         window.onload = function() {
             document.getElementById('seatInput').focus();
             console.log('🏛️ كلية التربية النوعية – جامعة عين شمس');
-            console.log('📊 نظام توقع الأقسام 2026 - التنسيق بيعلي كل سنة');
+            console.log('📊 نظام توقع الأقسام 2026 - بحث برقم الجلوس فقط');
             console.log('📈 بيانات التنسيق:', TANSIQ_DATA);
         };
     </script>
