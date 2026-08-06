@@ -125,67 +125,26 @@
 <body>
     <div class="bg-layer" aria-hidden="true"></div>
     <a href="https://wa.me/201274670994" target="_blank" class="whatsapp-float" title="تواصل مع فادي أشرف على واتساب"><i class="fab fa-whatsapp"></i></a>
-
-    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-        <div class="modal-content" id="modalContent" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)"><div class="modal-content" id="modalContent" onclick="event.stopPropagation()"><button class="modal-close" onclick="closeModal()">✕</button><div id="modalBody"></div></div></div>
     <main class="app-wrap">
-        <header class="topbar">
-            <div class="logo-area"><div class="logo-icon">🏛️</div><span>كلية التربية النوعية - جامعة عين شمس</span></div>
-            <div style="display:flex;align-items:center;gap:12px"><div class="year-tag">العام الدراسي 2025 / 2026</div></div>
-        </header>
-        <section class="hero-area">
-            <div class="live-badge"><span class="live-dot"></span>البيانات محدثة</div>
-            <h1>توقع قبولك في أقسام<br />كلية التربية النوعية 2026</h1>
-            <p>متاح فقط للنظام الحديث - اعرف القسم المتوقع لك بناءً على مجموعك وتنسيق 2024 و 2025</p>
-        </section>
+        <header class="topbar"><div class="logo-area"><div class="logo-icon">🏛️</div><span>كلية التربية النوعية - جامعة عين شمس</span></div><div style="display:flex;align-items:center;gap:12px"><div class="year-tag">العام الدراسي 2025 / 2026</div></div></header>
+        <section class="hero-area"><div class="live-badge"><span class="live-dot"></span>البيانات محدثة</div><h1>توقع قبولك في أقسام<br />كلية التربية النوعية 2026</h1><p>متاح فقط للنظام الحديث - اعرف القسم المتوقع لك بناءً على مجموعك وتنسيق 2024 و 2025</p></section>
         <section class="card">
-            <div class="sys-tabs">
-                <button class="sys-tab active" id="sysS1" onclick="selectSystem('modern')">📘 نظام حديث<small>المجموع من 320</small></button>
-                <button class="sys-tab" id="sysS2" onclick="selectSystem('old')">📙 نظام قديم<small>المجموع من 410</small></button>
-            </div>
-            <label class="form-label" for="seatInput" style="display:block;font-weight:800;margin-bottom:10px;font-size:15px;">رقم الجلوس</label>
-            <div class="form-row">
-                <div class="input-box"><i class="fas fa-search"></i><input id="seatInput" class="main-input" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="مثال: 2220361"></div>
-                <button class="btn-go" id="searchBtn" onclick="doSearch()"><span class="spinner"></span><span class="btn-label">بحث</span></button>
-            </div>
+            <div class="sys-tabs"><button class="sys-tab active" id="sysS1" onclick="selectSystem('modern')">📘 نظام حديث<small>المجموع من 320</small></button><button class="sys-tab" id="sysS2" onclick="selectSystem('old')">📙 نظام قديم<small>المجموع من 410</small></button></div>
+            <label style="display:block;font-weight:800;margin-bottom:10px;font-size:15px;" for="seatInput">رقم الجلوس</label>
+            <div class="form-row"><div class="input-box"><i class="fas fa-search"></i><input id="seatInput" class="main-input" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="مثال: 2220361"></div><button class="btn-go" id="searchBtn" onclick="doSearch()"><span class="spinner"></span><span class="btn-label">بحث</span></button></div>
             <div id="message" class="msg-box" role="status" aria-live="polite"></div>
             <div id="result" class="result-wrap" aria-live="polite">
-                <article class="result-card">
-                    <div class="result-head">
-                        <div><div class="result-meta" style="font-size:13px;color:var(--muted);font-weight:700;">بيانات الطالب</div><h2 id="studentName" class="result-name"></h2><div id="statusPill" class="status-pill"></div></div>
-                        <div class="score-box"><strong id="totalScore"></strong><span class="score-out" id="scoreOutOf" style="display:block;margin-top:7px;color:#bfdbfe;font-size:12px;"></span><span id="percentScore" class="score-pct" style="font-weight:900;margin-top:8px;color:#7dd3fc;font-size:14px;"></span></div>
-                    </div>
-                    <div class="details-grid">
-                        <div class="detail-cell"><b>رقم الجلوس</b><span id="rollOut"></span></div>
-                        <div class="detail-cell"><b>اسم الطالب</b><span id="nameOut"></span></div>
-                        <div class="detail-cell"><b>المجموع الكلي</b><span id="totalOut"></span></div>
-                        <div class="detail-cell"><b>الشعبة</b><span id="branchOut">—</span></div>
-                        <div class="detail-cell"><b>النظام</b><span id="sysOut">—</span></div>
-                        <div class="detail-cell"><b>العام الدراسي</b><span>2025 / 2026</span></div>
-                    </div>
-                </article>
-                <div id="predictionContent"></div>
-                <div id="disclaimerBox"></div>
+                <article class="result-card"><div class="result-head"><div><div class="result-meta" style="font-size:13px;color:var(--muted);font-weight:700;">بيانات الطالب</div><h2 id="studentName" class="result-name"></h2><div id="statusPill" class="status-pill"></div></div><div class="score-box"><strong id="totalScore"></strong><span class="score-out" id="scoreOutOf" style="display:block;margin-top:7px;color:#bfdbfe;font-size:12px;"></span><span id="percentScore" class="score-pct" style="font-weight:900;margin-top:8px;color:#7dd3fc;font-size:14px;"></span></div></div><div class="details-grid"><div class="detail-cell"><b>رقم الجلوس</b><span id="rollOut"></span></div><div class="detail-cell"><b>اسم الطالب</b><span id="nameOut"></span></div><div class="detail-cell"><b>المجموع الكلي</b><span id="totalOut"></span></div><div class="detail-cell"><b>الشعبة</b><span id="branchOut">—</span></div><div class="detail-cell"><b>النظام</b><span id="sysOut">—</span></div><div class="detail-cell"><b>العام الدراسي</b><span>2025 / 2026</span></div></div></article>
+                <div id="predictionContent"></div><div id="disclaimerBox"></div>
             </div>
             <p class="privacy-note">هذه الصفحة مخصصة للاستعلام، ولا يتم حفظ أي بيانات على الموقع.</p>
         </section>
-        <footer class="site-footer">
-            <p>© 2026 — كلية التربية النوعية - جامعة عين شمس</p>
-            <p>✨ تم التطوير بواسطة <a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" class="dev-name" style="text-decoration:none;">🚀 Fady Ashraf</a></p>
-            <a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" style="color:#0a66c2;text-decoration:none;font-weight:700;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://wa.me/201274670994" target="_blank" style="color:#25D366;text-decoration:none;font-weight:700;">📱 01274670994</a>
-        </footer>
+        <footer class="site-footer"><p>© 2026 — كلية التربية النوعية - جامعة عين شمس</p><p>✨ تم التطوير بواسطة <a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" class="dev-name" style="text-decoration:none;">🚀 Fady Ashraf</a></p><a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" style="color:#0a66c2;text-decoration:none;font-weight:700;"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://wa.me/201274670994" target="_blank" style="color:#25D366;text-decoration:none;font-weight:700;">📱 01274670994</a></footer>
     </main>
-
     <script>
         window.CONFIG = { proxyUrl: "https://holy-cherry-7a55.xitog45610.workers.dev/?url=", sourceDomain: "https://than.nezakr.net", localFile: "results.csv", timeout: 15000 };
         window.CONFIG_READY = true;
-
         const TANSIQ_DATA = {
             'تكنولوجيا التعليم': { '2024': { 'أدبي': 273, 'علمي علوم': 269.5, 'علمي رياضة': 266.5 }, '2025': { 'أدبي': 285, 'علمي علوم': 282, 'علمي رياضة': 279 } },
             'الإعلام التربوي': { '2024': { 'أدبي': 263, 'علمي علوم': 266, 'علمي رياضة': 264 }, '2025': { 'أدبي': 278, 'علمي علوم': 280, 'علمي رياضة': 277 } },
@@ -193,34 +152,38 @@
             'التربية الفنية': { '2024': { 'أدبي': 252, 'علمي علوم': 262, 'علمي رياضة': 262 }, '2025': { 'أدبي': 268, 'علمي علوم': 276, 'علمي رياضة': 276 } },
             'التربية الموسيقية': { '2024': { 'أدبي': 247.5, 'علمي علوم': 261.5, 'علمي رياضة': 261.5 }, '2025': { 'أدبي': 263, 'علمي علوم': 275, 'علمي رياضة': 275 } }
         };
+        const DEPT_DESC = {
+            'تكنولوجيا التعليم': 'توظيف التكنولوجيا الحديثة في العملية التعليمية وتطوير المناهج',
+            'الإعلام التربوي': 'الإعلام والصحافة والإنتاج الإعلامي الموجه للمؤسسات التعليمية',
+            'الاقتصاد المنزلي': 'الاقتصاد المنزلي والتربية الأسرية والتغذية وعلوم الأطعمة',
+            'التربية الفنية': 'الفنون التشكيلية والتربية الفنية وتنمية الإبداع',
+            'التربية الموسيقية': 'الموسيقى والتربية الموسيقية والعزف والتأليف والأداء الصوتي'
+        };
 
         function getDeptMessage(deptName) {
-            var signature = '<a href="https://wa.me/201274670994" target="_blank" class="whatsapp-btn-modal"><i class="fab fa-whatsapp" style="font-size:24px;"></i> عندك سؤال؟ ابعتلي على واتساب</a><div class="signature"><p style="font-size:16px;font-weight:800;color:var(--navy);">❤️ فادي أشرف</p><p style="font-size:14px;color:#64748b;">طالب الفرقة الرابعة - كلية التربية النوعية</p><a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" class="linkedin-link"><i class="fab fa-linkedin"></i> Fady Ashraf on LinkedIn</a></div>';
-            var specialEdu = '<hr class="divider"><h2>📚 قسم التربية الخاصة (قسم إضافي)</h2><p>فيه <strong>قسم التربية الخاصة</strong>، وده <strong>قسم إضافي</strong> تقدر تقدمله بجانب قسمك الأساسي.</p><p>يعني بتدرس قسمك الأساسي بشكل طبيعي، وفي نفس الوقت بتدرس مواد التربية الخاصة، وفي الآخر بتكون استفدت من التخصصين.</p><h3>✅ مميزاته</h3><ul class="pros"><li>بيفتحلك فرص شغل أكتر بعد التخرج.</li><li>بيديك خبرة في التعامل مع ذوي الاحتياجات الخاصة.</li><li>بيضيف قيمة كويسة للسيرة الذاتية (CV).</li></ul><h3>❌ عيوبه</h3><ul class="cons"><li>هيكون عندك مواد زيادة عن باقي زمايلك.</li><li>هيحتاج منك تنظيم وقت كويس.</li><li>لو مش ملتزم بالحضور ممكن تحس إن الحمل كبير عليك.</li></ul>';
+            var sig = '<a href="https://wa.me/201274670994" target="_blank" class="whatsapp-btn-modal"><i class="fab fa-whatsapp" style="font-size:24px;"></i> عندك سؤال؟ ابعتلي على واتساب</a><div class="signature"><p style="font-size:16px;font-weight:800;color:var(--navy);">❤️ فادي أشرف</p><p style="font-size:14px;color:#64748b;">طالب الفرقة الرابعة - كلية التربية النوعية</p><a href="https://www.linkedin.com/in/fady-ashraf-a837a63aa/" target="_blank" class="linkedin-link"><i class="fab fa-linkedin"></i> Fady Ashraf on LinkedIn</a></div>';
+            var spEdu = '<hr class="divider"><h2>📚 قسم التربية الخاصة (قسم إضافي)</h2><p>في نقطة ناس كتير متعرفهاش، وهي إن عندنا <strong>قسم التربية الخاصة</strong>، وده <strong>قسم إضافي</strong> تقدر تقدمله بجانب قسمك الأساسي، سواء كنت في تكنولوجيا التعليم أو الإعلام أو الاقتصاد المنزلي أو التربية الفنية أو التربية الموسيقية.</p><p>يعني بتدرس قسمك الأساسي بشكل طبيعي، وفي نفس الوقت بتدرس مواد التربية الخاصة، وفي الآخر بتكون استفدت من التخصصين.</p><h3>✅ مميزاته</h3><ul class="pros"><li>بيفتحلك فرص شغل أكتر بعد التخرج.</li><li>بيديك خبرة في التعامل مع ذوي الاحتياجات الخاصة، ودي ميزة قوية جدًا لأي حد ناوي يشتغل في المجال التعليمي.</li><li>بيضيف قيمة كويسة للسيرة الذاتية (CV)، لأنك بتكون دارس تخصص إضافي بجانب تخصصك الأساسي.</li></ul><h3>❌ عيوبه</h3><ul class="cons"><li>هيكون عندك مواد زيادة عن باقي زمايلك اللي مش داخلين القسم.</li><li>هيحتاج منك تنظيم وقت كويس، لأنك هتذاكر للقسم الأساسي والتربية الخاصة مع بعض.</li><li>لو أنت أصلًا مش ملتزم بالحضور أو بتأجل المذاكرة، ممكن تحس إن الحمل كبير عليك.</li></ul>';
 
-            var messages = {
-                'تكنولوجيا التعليم': '<h2>📱 ازيكم يا شباب، عاملين إيه؟ ❤️</h2><p class="subtitle" style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بقسم <strong>تكنولوجيا التعليم</strong>.</p><p>حبيت أعمل الرسالة دي لأي طالب لسه مستني التنسيق، وأحكيله عن الكلية والقسم من واقع تجربتي، من غير مبالغة ولا تهويل.</p><h3>🏛️ أولًا.. الكلية</h3><p>كلية التربية النوعية جامعة عين شمس موجودة في <strong>الدمرداش</strong>، برا الحرم الرئيسي للجامعة. وفيها 5 أقسام: تكنولوجيا التعليم، الإعلام التربوي، الاقتصاد المنزلي، التربية الفنية، التربية الموسيقية.</p><h3>✅ مميزات الكلية</h3><ul class="pros"><li>جو الكلية هادي وشبه المدرسة شوية.</li><li>أغلب الدكاترة مقدرين إنك طالب جديد وبيساعدوك.</li><li>بتتخرج معاك <strong>بكالوريوس تربوي</strong>.</li></ul><h3>❌ عيوب الكلية</h3><ul class="cons"><li>لو مش بتحضر ومش بتعمل تاسكات هتشيل مواد.</li><li>الدراسة معتمدة على المتابعة.</li><li>هيكون عندك تكليفات ومشاريع.</li></ul><hr class="divider"><h2>📱 قسم تكنولوجيا التعليم</h2><h3>✅ مميزاته</h3><ul class="pros"><li>هتتعلم أساسيات الجرافيك، والمونتاج، وإنتاج الوسائط التعليمية، وبعض أساسيات البرمجة.</li><li>القسم بيفتحلك أكتر من مجال بعد التخرج.</li><li>الدكاترة والمعيدين متعاونين جدًا، ورئيسة القسم متعاونة جدًا مع الطلبة.</li></ul><h3>❌ عيوبه</h3><ul class="cons"><li>أول سنة ممكن تحس إنك تايه.</li><li>الكلية هتديك الأساس بس، والاحتراف هيعتمد عليك.</li><li>أنصح أي حد داخل القسم إنه يكون معاه <strong>لاب توب</strong>.</li></ul>'+specialEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو بتحب التكنولوجيا أو الجرافيك أو الكمبيوتر، القسم هيكون مناسب ليك. الكلية هتحطك على أول الطريق، والباقي باجتهادك.</p><p style="font-weight:800;">احضر محاضراتك، اعمل التاسكات أول بأول، وحاول تطور نفسك من بره الكلية.</p></div>'+signature,
-
-                'الإعلام التربوي': '<h2>📢 السلام عليكم يا شباب ❤️</h2><p class="subtitle" style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong>.</p><p>بما إن ناس كتير كانت بتسألني عن <strong>قسم الإعلام التربوي</strong>، فحبيت أعمل الرسالة دي وأتكلم عن القسم بشكل بسيط.</p><h3>📢 أولًا.. قسم الإعلام التربوي</h3><p>لو أنت من الناس اللي بتحب الإعلام، أو التصوير، أو الإذاعة، أو الصحافة، أو صناعة المحتوى، فالقسم ده ممكن يكون مناسب ليك.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتدرس مجالات مختلفة زي الصحافة، والإذاعة، والإعلام التربوي.</li><li>فيه مواد عملية بتخليك تطبق اللي بتدرسه.</li><li>لو عندك شغف بصناعة المحتوى أو التقديم أو التصوير، فالقسم هيكون بداية كويسة.</li><li>بعد التخرج قدامك مجالات مختلفة تشتغل فيها.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم بيديك الأساس، لكن الاحتراف الحقيقي هيكون باجتهادك.</li><li>لازم تهتم بالحضور لأن فيه مواد عملية.</li><li>هتحتاج تعمل مشاريع وتاسكات.</li><li>لو معاك <strong>لاب توب</strong> هيكون أفضل بكتير.</li></ul>'+specialEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو أنت شايف إن الإعلام هو المجال اللي بتحبه، القسم هيكون اختيار كويس. الكلية هتعلمك الأساس، أما تميزك الحقيقي هيكون باجتهادك.</p></div>'+signature,
-
-                'الاقتصاد المنزلي': '<h2>🏠 السلام عليكم يا شباب ❤️</h2><p class="subtitle" style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong>.</p><p>ناس كتير طلبت مني أتكلم عن <strong>قسم الاقتصاد المنزلي</strong>، فحبيت أوضح طبيعة القسم.</p><h3>🏠 أولًا.. قسم الاقتصاد المنزلي</h3><p>القسم متاح للبنين والبنات، وبيجمع بين الدراسة النظرية والعملية.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتدرس مجالات متنوعة زي التغذية، والملابس والنسيج، وإدارة المنزل.</li><li>فيه مواد عملية كتير.</li><li>بتتخرج معاك <strong>بكالوريوس تربوي</strong>.</li><li>لو طورت نفسك بكورسات هتفتح فرص شغل أكتر.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>فيه مواد عملية وتكليفات فلازم تلتزم بالحضور.</li><li>لو سيبت المذاكرة لآخر الترم هتلاقي الدنيا صعبة.</li><li>بعض المواد هتحتاج مجهود عملي.</li><li>الكلية هتديك الأساس، لكن التميز محتاج تطوير من بره.</li></ul>'+specialEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو شايف إن القسم مناسب لاهتماماتك، فممكن يكون اختيار موفق. الكلية هتديك الأساس، لكن نجاحك بيعتمد على اجتهادك.</p></div>'+signature,
-
-                'التربية الفنية': '<h2>🎨 السلام عليكم يا شباب ❤️</h2><p class="subtitle" style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong>.</p><p>ناس كتير طلبت مني أتكلم عن <strong>قسم التربية الفنية</strong>، فحبيت أوضح طبيعة القسم.</p><h3>🎨 أولًا.. قسم التربية الفنية</h3><p>مناسب لأي حد بيحب الرسم، والتصميم، والإبداع، والأعمال اليدوية.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتتعلم مجالات فنية متنوعة زي الرسم، والتصوير، والتصميم، والأشغال الفنية، والنحت، والطباعة.</li><li>الدراسة فيها جزء عملي كبير.</li><li>لو عندك موهبة في الرسم، القسم هيساعدك تنميها.</li><li>بعد التخرج تقدر تشتغل في التدريس أو التصميم.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم بيعتمد على التطبيق العملي فلازم تلتزم بالحضور.</li><li>هيكون عندك مشاريع وتكليفات كتير.</li><li>هتحتاج تشتري خامات وأدوات فنية.</li><li>الكلية هتديك الأساس، لكن التميز محتاج تطوير وتدريب مستمر.</li></ul>'+specialEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو بتحب الرسم والفنون والإبداع، القسم هيكون مناسب ليك. الكلية هتعلمك الأساس، أما تميزك فباجتهادك وبناء معرض أعمال (Portfolio).</p></div>'+signature,
-
-                'التربية الموسيقية': '<h2>🎵 السلام عليكم يا شباب ❤️</h2><p class="subtitle" style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong>.</p><p>ناس كتير طلبت مني أتكلم عن <strong>قسم التربية الموسيقية</strong>، فحبيت أوضح طبيعة القسم.</p><h3>🎵 أولًا.. قسم التربية الموسيقية</h3><p>مناسب لأي حد عنده شغف بالموسيقى، سواء بالعزف، أو الغناء، أو التلحين.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتتعلم أساسيات الموسيقى بشكل أكاديمي.</li><li>الدراسة فيها جانب عملي كبير.</li><li>لو عندك موهبة، القسم هيساعدك تنميها بشكل علمي.</li><li>بعد التخرج تقدر تشتغل في التدريس أو مجالات مرتبطة بالموسيقى.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم محتاج تدريب مستمر.</li><li>فيه مواد عملية وتكليفات فلازم تلتزم بالحضور.</li><li>ممكن تحتاج أدوات أو آلات موسيقية.</li><li>الكلية هتديك الأساس، لكن التميز محتاج تطوير من بره.</li></ul>'+specialEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو بتحب الموسيقى وعندك شغف حقيقي، القسم ممكن يكون اختيار مناسب. الموهبة لوحدها مش كفاية، لازم تطورها بالتعلم والممارسة.</p></div>'+signature
-            };
-            return messages[deptName] || '<h2>🏛️ ' + deptName + '</h2><p style="text-align:center;padding:20px;">لا توجد معلومات تفصيلية عن هذا القسم حالياً.</p>';
+            if (deptName === 'تكنولوجيا التعليم') {
+                return '<h2>📱 ازيكم يا شباب، عاملين إيه؟ ❤️</h2><p style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بقسم <strong>تكنولوجيا التعليم</strong> بكلية التربية النوعية - جامعة عين شمس.</p><p>حبيت أعمل الرسالة دي لأي طالب لسه مستني التنسيق، وأحكيله عن الكلية والقسم من واقع تجربتي، من غير مبالغة ولا تهويل.</p><h3>🏛️ أولًا.. الكلية</h3><p>كلية التربية النوعية جامعة عين شمس موجودة في <strong>الدمرداش</strong>، برا الحرم الرئيسي للجامعة.</p><p>والكلية فيها 5 أقسام:</p><ul><li>تكنولوجيا التعليم</li><li>الإعلام التربوي</li><li>الاقتصاد المنزلي</li><li>التربية الفنية</li><li>التربية الموسيقية</li></ul><p>وكل قسم ليه مميزاته وعيوبه، فمتسمعش لحد يقولك دي أحسن كلية أو أوحش كلية، لأن كل واحد بيحكي تجربته.</p><h3>✅ مميزات الكلية</h3><ul class="pros"><li>هتحس إن جو الكلية هادي وشبه المدرسة شوية، وده بيساعدك تتعرف على زمايلك بسرعة.</li><li>أغلب الدكاترة بيكونوا مقدرين إنك طالب جديد، خصوصًا في أول ترم، وبيساعدوك لحد ما تبدأ تفهم نظام الدراسة.</li><li>بتتخرج معاك <strong>بكالوريوس تربوي</strong>، يعني مؤهل للتدريس من غير ما تحتاج سنة تربوية بعد التخرج.</li></ul><h3>❌ عيوب الكلية</h3><p>بصراحة مفيش كلية كاملة، لكن في كام نقطة لازم تبقى عارفها:</p><ul class="cons"><li>لو مش بتحضر المحاضرات، ومش بتعمل التاسكات، ومبتذاكرش أول بأول، فممكن تشيل مواد لا قدر الله.</li><li>الدراسة معتمدة على المتابعة، فمينفعش تسيب كل حاجة لآخر الترم.</li><li>هيكون عندك تكليفات ومشاريع، فلازم تنظم وقتك من البداية.</li></ul><hr class="divider"><h2>📱 قسم تكنولوجيا التعليم</h2><p>وده قسمي، وهتكلم عنه من خلال تجربتي.</p><h3>✅ مميزاته</h3><ul class="pros"><li>هتتعلم أساسيات الجرافيك، والمونتاج، وإنتاج الوسائط التعليمية، وبعض أساسيات البرمجة حسب الخطة الدراسية.</li><li>القسم بيفتحلك أكتر من مجال بعد التخرج، سواء معلم حاسب، أو أخصائي تكنولوجيا تعليم، أو تكمل في مجال الجرافيك أو الميديا لو طورت نفسك.</li><li>الدكاترة والمعيدين في القسم متعاونين جدًا، ولو عندك مشكلة هتلاقي حد يساعدك، ورئيسة القسم كمان متعاونة جدًا مع الطلبة.</li></ul><h3>❌ عيوبه</h3><ul class="cons"><li>أول سنة ممكن تحس إنك تايه، وإن بعض المواد ملهاش علاقة بالقسم، لكن بعد كده هتبدأ تربط كل حاجة ببعض.</li><li>الكلية هتديك الأساس بس، لكن الاحتراف هيعتمد عليك. لو عايز تبقى مميز لازم تتعلم من بره وتشتغل على نفسك وتعمل مشاريع خاصة بيك.</li><li>أنصح أي حد داخل القسم إنه يكون معاه <strong>لاب توب</strong>. مش شرط يكون إمكانياته عالية، لكن وجوده هيفرق جدًا في تنفيذ التاسكات والمشاريع، وهيخليك تعتمد على نفسك بدل ما تستنى أجهزة الكلية أو تستلف جهاز من صحابك.</li></ul>'+spEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو بتحب التكنولوجيا أو الجرافيك أو الكمبيوتر، ومستعد تتعلم وتطور من نفسك، فالقسم هيكون مناسب ليك جدًا.</p><p>لكن افتكر إن الكلية لوحدها مش هتخليك محترف، هي هتحطك على أول الطريق، والباقي هيكون باجتهادك أنت.</p><p style="font-weight:800;">وأهم نصيحة أقدر أقولها ليك: <strong>احضر محاضراتك، اعمل التاسكات أول بأول، وحاول تطور نفسك من بره الكلية.</strong> لأن اللي بيعمل كده بيكون الفرق بينه وبين أي حد تاني كبير جدًا وقت التخرج.</p></div>'+sig;
+            }
+            if (deptName === 'الإعلام التربوي') {
+                return '<h2>📢 السلام عليكم يا شباب ❤️</h2><p style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بكلية التربية النوعية - جامعة عين شمس.</p><p>بما إن ناس كتير كانت بتسألني عن <strong>قسم الإعلام التربوي</strong>، فحبيت أعمل الرسالة دي وأتكلم عن القسم بشكل بسيط، من غير ما أقول إنه أحسن قسم أو أوحش قسم، لأن في النهاية كل واحد ليه ميوله وتجربته.</p><h3>📢 أولًا.. قسم الإعلام التربوي</h3><p>لو أنت من الناس اللي بتحب الإعلام، أو التصوير، أو الإذاعة، أو الصحافة، أو صناعة المحتوى، فالقسم ده ممكن يكون مناسب ليك.</p><p>لكن متختارش القسم علشان كلام الناس أو علشان التنسيق، اختاره لو أنت شايف نفسك فعلًا هتستمتع بمجاله.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتدرس مجالات مختلفة زي الصحافة، والإذاعة، والإعلام التربوي، وهتاخد فكرة عن كل مجال.</li><li>فيه مواد عملية بتخليك تطبق اللي بتدرسه، وده بيساعدك تكتسب خبرة مع الوقت.</li><li>لو عندك شغف بصناعة المحتوى أو التقديم أو التصوير، فالقسم هيكون بداية كويسة جدًا ليك.</li><li>بعد التخرج قدامك مجالات مختلفة تشتغل فيها، سواء في المجال الإعلامي أو التعليمي، وكل ما تطور من نفسك هتلاقي فرص أكتر.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم بيديك الأساس، لكن الاحتراف الحقيقي هيكون باجتهادك أنت، فلازم تتعلم من بره وتطور مهاراتك باستمرار.</li><li>لازم تهتم بالحضور، لأن فيه مواد عملية صعب تعتمد فيها على الملخصات أو المذاكرة قبل الامتحان.</li><li>هتحتاج تعمل مشاريع وتاسكات، فحاول متأجلهاش لآخر الترم.</li><li>لو معاك <strong>لاب توب</strong> هيكون أفضل بكتير، لأنه هيساعدك في تنفيذ المشاريع والتاسكات بدل ما تعتمد على أجهزة الكلية أو تستلف جهاز من حد.</li></ul>'+spEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو أنت شايف إن الإعلام هو المجال اللي بتحبه، وعندك استعداد تتعلم وتطور من نفسك، فالقسم هيكون اختيار كويس ليك.</p><p>لكن افتكر دايمًا إن الكلية هتعلمك الأساس، أما تميزك الحقيقي هيكون باجتهادك، وكورساتك، ومشاريعك، وشغلك على نفسك.</p></div>'+sig;
+            }
+            if (deptName === 'الاقتصاد المنزلي') {
+                return '<h2>🏠 السلام عليكم يا شباب ❤️</h2><p style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بكلية التربية النوعية - جامعة عين شمس.</p><p>بعد ما اتكلمت عن قسم تكنولوجيا التعليم والإعلام التربوي، ناس كتير طلبت مني أتكلم عن <strong>قسم الاقتصاد المنزلي</strong>، فحبيت أعمل الرسالة دي عشان أوضح طبيعة القسم ومميزاته وعيوبه بشكل بسيط ومن غير مبالغة.</p><h3>🏠 أولًا.. قسم الاقتصاد المنزلي</h3><p>ناس كتير أول ما تسمع اسم القسم تفتكر إنه خاص بالبنات بس، وده اعتقاد غلط.</p><p>القسم متاح للبنين والبنات، وبيجمع بين الدراسة النظرية والعملية، ولو أنت بتحب المجالات العملية والتطبيقية فالقسم ممكن يكون مناسب ليك.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتدرس مجالات متنوعة زي التغذية، والملابس والنسيج، وإدارة المنزل، وغيرها من المواد اللي بتخليك تاخد خبرة في أكتر من مجال.</li><li>فيه مواد عملية كتير، وده بيخلي الدراسة بعيدة شوية عن الملل اللي بيكون في المواد النظرية فقط.</li><li>بتتخرج معاك <strong>بكالوريوس تربوي</strong>، وبالتالي تقدر تشتغل في المجال التعليمي، وكمان تقدر تستفيد من التخصص في مجالات تانية حسب مهاراتك.</li><li>لو طورت نفسك بكورسات أو خبرة عملية، هتفتح لنفسك فرص شغل أكتر بعد التخرج.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>فيه مواد عملية وتكليفات، فلازم تكون ملتزم بالحضور وتنفيذ المطلوب أول بأول.</li><li>لو سيبت المذاكرة والتاسكات لآخر الترم، هتلاقي الدنيا صعبة عليك، لأن في مواد محتاجة متابعة باستمرار.</li><li>بعض المواد هتحتاج مجهود عملي بجانب المذاكرة، فلازم تنظم وقتك كويس.</li><li>زي أي قسم في الكلية، هو هيديك الأساس، لكن لو عايز تتميز لازم تطور نفسك من بره ومتكتفيش بالمحاضرات.</li></ul>'+spEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو أنت شايف إن <strong>قسم الاقتصاد المنزلي</strong> مناسب لاهتماماتك، ومتقبل طبيعة الدراسة العملية فيه، فممكن يكون اختيار موفق ليك.</p><p>وفي النهاية، افتكر إن الكلية هتديك الأساس، لكن نجاحك الحقيقي هيعتمد على اجتهادك، وتطويرك لنفسك، واستغلالك للفرص اللي هتقابلك.</p></div>'+sig;
+            }
+            if (deptName === 'التربية الفنية') {
+                return '<h2>🎨 السلام عليكم يا شباب ❤️</h2><p style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بكلية التربية النوعية - جامعة عين شمس.</p><p>بعد ما اتكلمت عن باقي الأقسام، ناس كتير طلبت مني أتكلم عن <strong>قسم التربية الفنية</strong>، فحبيت أعمل الرسالة دي عشان أوضح طبيعة القسم ومميزاته وعيوبه بشكل بسيط ومن غير مبالغة.</p><h3>🎨 أولًا.. قسم التربية الفنية</h3><p>قسم التربية الفنية مناسب لأي حد بيحب الرسم، والتصميم، والإبداع، والأعمال اليدوية، وعنده شغف بالفن بشكل عام.</p><p>لكن متدخلش القسم لمجرد إن حد قالك إنه سهل أو حلو، ادخله لو فعلًا بتحب المجال، لأن أغلب الدراسة فيه قائمة على الممارسة والتطبيق.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتتعلم مجالات فنية متنوعة زي الرسم، والتصوير، والتصميم، والأشغال الفنية، والنحت، والطباعة وغيرها حسب الخطة الدراسية.</li><li>الدراسة فيها جزء عملي كبير، وده بيخليك تطور مهاراتك مع الوقت وتبني أعمال خاصة بيك.</li><li>لو عندك موهبة في الرسم أو التصميم، القسم هيساعدك تنميها بشكل أكاديمي.</li><li>بعد التخرج تقدر تشتغل في التدريس، أو تطور نفسك وتشتغل في مجالات التصميم والفنون حسب مهاراتك وخبرتك.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم بيعتمد بشكل كبير على التطبيق العملي، فلازم تكون ملتزم بالحضور وتنفيذ الأعمال المطلوبة.</li><li>هيكون عندك مشاريع وتكليفات كتير في بعض المواد، فمينفعش تسيب كل حاجة لآخر الترم.</li><li>هتحتاج تشتري بعض الخامات والأدوات الفنية على حسب متطلبات كل مادة، وده ممكن يكون مكلف شوية في بعض الأوقات.</li><li>الكلية هتديك الأساس، لكن لو عايز تتميز فعلًا لازم تطور نفسك، وتتمرن باستمرار، وتعمل أعمال فنية خارج الدراسة.</li></ul>'+spEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو أنت فعلًا بتحب الرسم والفنون والإبداع، وعندك استعداد تتعلم وتطور من نفسك، فقسم <strong>التربية الفنية</strong> هيكون مناسب ليك جدًا.</p><p>لكن افتكر إن الكلية هتعلمك الأساس، أما تميزك الحقيقي هيكون باجتهادك، وتدريبك المستمر، وبناء معرض أعمال (Portfolio) يعبر عن شغلك.</p></div>'+sig;
+            }
+            if (deptName === 'التربية الموسيقية') {
+                return '<h2>🎵 السلام عليكم يا شباب ❤️</h2><p style="color:#64748b;font-size:14px;">أنا <strong>فادي أشرف</strong>، طالب في <strong>الفرقة الرابعة</strong> بكلية التربية النوعية - جامعة عين شمس.</p><p>بعد ما اتكلمت عن أقسام الكلية، ناس كتير طلبت مني أتكلم عن <strong>قسم التربية الموسيقية</strong>، فحبيت أعمل الرسالة دي عشان أوضح طبيعة القسم ومميزاته وعيوبه بشكل بسيط ومن غير مبالغة.</p><h3>🎵 أولًا.. قسم التربية الموسيقية</h3><p>قسم التربية الموسيقية مناسب لأي حد عنده شغف بالموسيقى، سواء بالعزف، أو الغناء، أو التلحين، أو عنده رغبة إنه يتعلم المجال بشكل أكاديمي.</p><p>لكن مهم جدًا تعرف إن القسم مش مجرد إنك بتحب تسمع أغاني، الدراسة فيه محتاجة حب حقيقي للموسيقى واستعداد للتدريب والممارسة.</p><h3>✅ مميزات القسم</h3><ul class="pros"><li>هتتعلم أساسيات الموسيقى بشكل أكاديمي، زي النظريات الموسيقية، والعزف، والتدريب الصوتي، وغيرها من المجالات حسب تخصصك.</li><li>الدراسة فيها جانب عملي كبير، وده بيساعدك تطور مهاراتك مع الوقت.</li><li>لو عندك موهبة أو شغف بالموسيقى، القسم هيساعدك تنمي الموهبة دي بشكل منظم وعلمي.</li><li>بعد التخرج تقدر تشتغل في مجال التدريس، أو تطور نفسك في مجالات مرتبطة بالموسيقى حسب مهاراتك وخبرتك.</li></ul><h3>❌ عيوب القسم</h3><ul class="cons"><li>القسم محتاج تدريب مستمر، لأن المهارة الموسيقية مش بتتعلم بالمذاكرة فقط، لازم ممارسة بشكل دائم.</li><li>فيه مواد عملية وتكليفات، فلازم تكون ملتزم بالحضور والتدريب أول بأول.</li><li>ممكن تحتاج أدوات أو آلات موسيقية حسب طبيعة المواد اللي بتدرسها، وده ممكن يكون تحدي لبعض الطلبة.</li><li>الكلية هتديك الأساس، لكن لو عايز تتميز لازم تطور نفسك من بره، وتتدرب أكتر، وتشتغل على مهاراتك.</li></ul>'+spEdu+'<hr class="divider"><div class="highlight-box"><h4>💡 وفي الآخر...</h4><p>لو أنت بتحب الموسيقى وعندك شغف حقيقي بالمجال، ومستعد تتدرب وتطور من نفسك، فقسم <strong>التربية الموسيقية</strong> ممكن يكون اختيار مناسب ليك.</p><p>لكن افتكر إن الموهبة لوحدها مش كفاية، لازم تطورها بالتعلم والممارسة المستمرة.</p><p>وفي النهاية كل قسم في الكلية له مميزاته وتحدياته، والنجاح فيه بيعتمد على الشخص نفسه واجتهاده.</p></div>'+sig;
+            }
+            return '<h2>🏛️ ' + deptName + '</h2><p style="text-align:center;padding:20px;">لا توجد معلومات تفصيلية عن هذا القسم حالياً.</p>';
         }
 
         var currentSystem = 'modern', studentData = null;
-
-        function selectSystem(sys) {
-            currentSystem = sys;
-            document.getElementById('sysS1').classList.toggle('active', sys === 'modern');
-            document.getElementById('sysS2').classList.toggle('active', sys === 'old');
-            resetAll();
-        }
-
+        function selectSystem(sys) { currentSystem = sys; document.getElementById('sysS1').classList.toggle('active', sys === 'modern'); document.getElementById('sysS2').classList.toggle('active', sys === 'old'); resetAll(); }
         function setLoading(l) { var b = document.getElementById('searchBtn'); b.disabled = l; b.classList.toggle('loading', l); }
         function showMsg(m, t) { var e = document.getElementById('message'); e.textContent = m; e.className = 'msg-box show ' + (t || 'error'); }
         function clearMsg() { document.getElementById('message').className = 'msg-box'; }
@@ -244,75 +207,67 @@
 
         function checkDepartment() {
             if(currentSystem!=='modern') return;
-            var deptName = document.getElementById('deptSelect').value;
-            var predDiv = document.getElementById('predictionResultBox');
-            var recDiv = document.getElementById('recommendationBox');
-            var allDepts = document.getElementById('allDeptsSection');
-            if(!deptName||!studentData) { predDiv.classList.remove('show'); if(recDiv) recDiv.classList.remove('show'); return; }
-            var score = parseFloat(studentData.total_degree)||0, branch = studentData.branch||'أدبي';
-            var deptData = TANSIQ_DATA[deptName], score2025 = deptData['2025']?deptData['2025'][branch]:null, score2024 = deptData['2024']?deptData['2024'][branch]:null, pred2026 = predict2026(score2024,score2025);
-            var isAccepted = pred2026 && score>=pred2026;
-            var html = '';
-            if(isAccepted) {
-                html += '<div class="top-prediction accepted"><span class="badge green">🎉 توقع القبول</span><div class="dept-name">'+deptName+'</div><p class="college-uni" style="font-size:16px;color:var(--muted);">كلية التربية النوعية – جامعة عين شمس</p><div class="pred-details" style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:25px;"><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">تنسيق 2025</small><strong style="display:block;font-size:24px;">'+(score2025||'—')+'</strong></div><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">متوقع 2026</small><strong style="display:block;font-size:24px;color:#059669;">'+pred2026.toFixed(1)+'</strong></div><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">مجموعك</small><strong style="display:block;font-size:24px;">'+score+'</strong></div></div><div class="verdict yes">✅ فرصة كبيرة للقبول</div><p style="margin-top:12px;color:#059669;font-weight:600;">مجموعك أعلى من التنسيق المتوقع بـ '+(score-pred2026).toFixed(1)+' درجة</p><button class="details-btn" onclick="showDeptInfo(\''+deptName+'\')">📋 مميزات وعيوب القسم</button></div>';
+            var dn = document.getElementById('deptSelect').value;
+            var pd = document.getElementById('predictionResultBox');
+            var rd = document.getElementById('recommendationBox');
+            var ad = document.getElementById('allDeptsSection');
+            if(!dn||!studentData) { pd.classList.remove('show'); if(rd) rd.classList.remove('show'); return; }
+            var sc = parseFloat(studentData.total_degree)||0, br = studentData.branch||'أدبي';
+            var dd = TANSIQ_DATA[dn], s25 = dd['2025']?dd['2025'][br]:null, s24 = dd['2024']?dd['2024'][br]:null, p26 = predict2026(s24,s25);
+            var ok = p26 && sc>=p26;
+            var h = '';
+            if(ok) {
+                h += '<div class="top-prediction accepted"><span class="badge green">🎉 توقع القبول</span><div class="dept-name">'+dn+'</div><p style="font-size:16px;color:var(--muted);">كلية التربية النوعية – جامعة عين شمس</p><div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:25px;"><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">تنسيق 2025</small><strong style="display:block;font-size:24px;">'+(s25||'—')+'</strong></div><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">متوقع 2026</small><strong style="display:block;font-size:24px;color:#059669;">'+p26.toFixed(1)+'</strong></div><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">مجموعك</small><strong style="display:block;font-size:24px;">'+sc+'</strong></div></div><div class="verdict yes">✅ فرصة كبيرة للقبول</div><p style="margin-top:12px;color:#059669;font-weight:600;">مجموعك أعلى من التنسيق المتوقع بـ '+(sc-p26).toFixed(1)+' درجة</p><button class="details-btn" onclick="showDeptInfo(\''+dn+'\')">📋 مميزات وعيوب القسم</button></div>';
             } else {
-                html += '<div class="top-prediction rejected"><span class="badge red">⚠️ توقع عدم القبول</span><div class="dept-name">'+deptName+'</div><p class="college-uni" style="font-size:16px;color:var(--muted);">كلية التربية النوعية – جامعة عين شمس</p><div class="pred-details" style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:25px;"><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">تنسيق 2025</small><strong style="display:block;font-size:24px;">'+(score2025||'—')+'</strong></div><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">متوقع 2026</small><strong style="display:block;font-size:24px;color:#dc2626;">'+pred2026.toFixed(1)+'</strong></div><div class="pred-detail" style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">مجموعك</small><strong style="display:block;font-size:24px;">'+score+'</strong></div></div><div class="verdict no">❌ فرصة قبول ضعيفة</div><p style="margin-top:12px;color:#dc2626;font-weight:600;">الفرق عن التنسيق المتوقع: '+(pred2026-score).toFixed(1)+' درجة</p><button class="details-btn" onclick="showDeptInfo(\''+deptName+'\')">📋 مميزات وعيوب القسم</button></div>';
+                h += '<div class="top-prediction rejected"><span class="badge red">⚠️ توقع عدم القبول</span><div class="dept-name">'+dn+'</div><p style="font-size:16px;color:var(--muted);">كلية التربية النوعية – جامعة عين شمس</p><div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:25px;"><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">تنسيق 2025</small><strong style="display:block;font-size:24px;">'+(s25||'—')+'</strong></div><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">متوقع 2026</small><strong style="display:block;font-size:24px;color:#dc2626;">'+p26.toFixed(1)+'</strong></div><div style="background:#fff;border-radius:14px;padding:18px 24px;text-align:center;min-width:110px;"><small style="color:var(--muted);font-size:11px;">مجموعك</small><strong style="display:block;font-size:24px;">'+sc+'</strong></div></div><div class="verdict no">❌ فرصة قبول ضعيفة</div><p style="margin-top:12px;color:#dc2626;font-weight:600;">الفرق عن التنسيق المتوقع: '+(p26-sc).toFixed(1)+' درجة</p><button class="details-btn" onclick="showDeptInfo(\''+dn+'\')">📋 مميزات وعيوب القسم</button></div>';
             }
-            predDiv.innerHTML = html; predDiv.classList.add('show');
-            if(!isAccepted) { showRecommendation(score,branch); if(allDepts) allDepts.style.display='block'; }
-            else { if(recDiv) { recDiv.classList.remove('show'); recDiv.innerHTML=''; } if(allDepts) allDepts.style.display='none'; }
+            pd.innerHTML = h; pd.classList.add('show');
+            if(!ok) { showRecommendation(sc,br); if(ad) ad.style.display='block'; }
+            else { if(rd) { rd.classList.remove('show'); rd.innerHTML=''; } if(ad) ad.style.display='none'; }
         }
 
-        function showRecommendation(score, branch) {
-            var best = findBestDepartment(score, branch);
-            var recDiv = document.getElementById('recommendationBox');
-            if(!best||!recDiv) return;
-            recDiv.innerHTML = '<div class="rec-icon" style="font-size:48px;">💡</div><h3 style="font-size:20px;font-weight:900;color:#b45309;">الأقسام البديلة المناسبة ليك</h3><p style="color:#92400e;font-size:14px;">أفضل قسم ممكن تلتحق بيه: <strong>'+best.name+'</strong></p>'+(best.diff>=0?'<p style="font-size:13px;color:#92400e;">✅ مجموعك ('+score+') أعلى من التنسيق المتوقع ('+best.pred2026.toFixed(1)+')</p>':'<p style="font-size:13px;color:#92400e;">⚠️ الفارق عن التنسيق المتوقع: '+Math.abs(best.diff).toFixed(1)+' درجة</p>')+'<p style="margin-top:12px;font-size:13px;color:#b45309;">👇 شوف كل الأقسام المتاحة تحت</p>';
-            recDiv.classList.add('show');
+        function showRecommendation(sc, br) {
+            var best = findBestDepartment(sc, br);
+            var rd = document.getElementById('recommendationBox');
+            if(!best||!rd) return;
+            rd.innerHTML = '<div style="font-size:48px;">💡</div><h3 style="font-size:20px;font-weight:900;color:#b45309;">الأقسام البديلة المناسبة ليك</h3><p style="color:#92400e;font-size:14px;">أفضل قسم ممكن تلتحق بيه: <strong>'+best.name+'</strong></p>'+(best.diff>=0?'<p style="font-size:13px;color:#92400e;">✅ مجموعك ('+sc+') أعلى من التنسيق المتوقع ('+best.pred2026.toFixed(1)+')</p>':'<p style="font-size:13px;color:#92400e;">⚠️ الفارق عن التنسيق المتوقع: '+Math.abs(best.diff).toFixed(1)+' درجة</p>')+'<p style="margin-top:12px;font-size:13px;color:#b45309;">👇 شوف كل الأقسام المتاحة تحت</p>';
+            rd.classList.add('show');
         }
 
-        function showDeptInfo(deptName) { document.getElementById('modalBody').innerHTML = getDeptMessage(deptName); document.getElementById('modalOverlay').classList.add('show'); }
-        function closeModal(event) { if(event&&event.target!==document.getElementById('modalOverlay')) return; document.getElementById('modalOverlay').classList.remove('show'); }
+        function showDeptInfo(dn) { document.getElementById('modalBody').innerHTML = getDeptMessage(dn); document.getElementById('modalOverlay').classList.add('show'); }
+        function closeModal(e) { if(e&&e.target!==document.getElementById('modalOverlay')) return; document.getElementById('modalOverlay').classList.remove('show'); }
 
-        const DEPT_DESC = {
-            'تكنولوجيا التعليم': 'توظيف التكنولوجيا الحديثة في العملية التعليمية وتطوير المناهج',
-            'الإعلام التربوي': 'الإعلام والصحافة والإنتاج الإعلامي الموجه للمؤسسات التعليمية',
-            'الاقتصاد المنزلي': 'الاقتصاد المنزلي والتربية الأسرية والتغذية وعلوم الأطعمة',
-            'التربية الفنية': 'الفنون التشكيلية والتربية الفنية وتنمية الإبداع',
-            'التربية الموسيقية': 'الموسيقى والتربية الموسيقية والعزف والتأليف والأداء الصوتي'
-        };
-
-        function renderAllDepartments(student) {
+        function renderAllDepartments(st) {
             if(currentSystem!=='modern') return '';
-            var grid = document.getElementById('deptsGrid'); if(!grid) return '';
-            var score = parseFloat(student.total_degree)||0, branch = student.branch||'أدبي', best = findBestDepartment(score,branch);
-            grid.innerHTML = Object.keys(TANSIQ_DATA).map(function(n) {
-                var d = TANSIQ_DATA[n], s25 = d['2025']?d['2025'][branch]:null, s24 = d['2024']?d['2024'][branch]:null, p26 = predict2026(s24,s25), isRec = best&&best.name===n;
+            var g = document.getElementById('deptsGrid'); if(!g) return '';
+            var sc = parseFloat(st.total_degree)||0, br = st.branch||'أدبي', best = findBestDepartment(sc,br);
+            g.innerHTML = Object.keys(TANSIQ_DATA).map(function(n) {
+                var d = TANSIQ_DATA[n], s25 = d['2025']?d['2025'][br]:null, s24 = d['2024']?d['2024'][br]:null, p26 = predict2026(s24,s25), isRec = best&&best.name===n;
                 var tc = 'red', tt = 'فرصة ضعيفة';
-                if(p26&&score>=p26) { tc='green'; tt='فرصة ممتازة'; } else if(p26&&score>=p26-3) { tc='yellow'; tt='فرصة متوسطة'; }
+                if(p26&&sc>=p26) { tc='green'; tt='فرصة ممتازة'; } else if(p26&&sc>=p26-3) { tc='yellow'; tt='فرصة متوسطة'; }
                 return '<div class="dept-card'+(isRec?' recommended':'')+'"><h4 style="font-size:17px;font-weight:800;">🏛️ '+n+'</h4><div style="font-size:12px;color:var(--muted);margin-bottom:12px;">'+(DEPT_DESC[n]||'')+'</div><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;"><div><div style="font-size:18px;font-weight:800;">'+(s25||'—')+'</div><div style="font-size:10px;color:var(--muted);">تنسيق 2025</div></div><div><div style="font-size:18px;font-weight:800;">'+(p26?p26.toFixed(1):'—')+'</div><div style="font-size:10px;color:var(--muted);">متوقع 2026</div></div><span class="tag '+tc+'">'+tt+'</span></div><button class="info-btn" onclick="showDeptInfo(\''+n+'\')">📋 مميزات وعيوب القسم</button></div>';
             }).join('');
         }
 
-        async function fetchStudentFromSource(seatNumber, systemType) {
-            var system = systemType==='modern'?'s1':'s2';
+        async function fetchStudentFromSource(sn, st) {
+            var sys = st==='modern'?'s1':'s2';
             try {
-                var response = await fetch(window.CONFIG.proxyUrl+encodeURIComponent(window.CONFIG.sourceDomain+'/index.php?system='+system+'&t=glos&k='+seatNumber), {signal:AbortSignal.timeout(window.CONFIG.timeout)});
-                if(!response.ok) return null;
-                var html = await response.text();
-                var nm = html.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
-                var sm = html.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
-                var stm = html.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
-                var bm = html.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
-                if(nm&&sm) return {seating_no:seatNumber,arabic_name:nm[1].trim(),total_degree:sm[1].trim(),max_degree:sm[2].trim(),status:stm?stm[1].trim():'',branch:bm?bm[1].trim():'—',detectedSystem:systemType};
+                var r = await fetch(window.CONFIG.proxyUrl+encodeURIComponent(window.CONFIG.sourceDomain+'/index.php?system='+sys+'&t=glos&k='+sn), {signal:AbortSignal.timeout(window.CONFIG.timeout)});
+                if(!r.ok) return null;
+                var h = await r.text();
+                var nm = h.match(/نتيجة الطالب\s+(.+?)\s+في الثانوية العامة/);
+                var sm = h.match(/nzk-score-total[^>]*>\s*<b>([\d.]+)\s*\/\s*(\d+)<\/b>/);
+                var stm = h.match(/nzk-result-badge[^>]*>\s*<i[^>]*><\/i>\s*([^<]+)</);
+                var bm = h.match(/الشعبة<\/small>\s*<b>([^<]+)<\/b>/);
+                if(nm&&sm) return {seating_no:sn,arabic_name:nm[1].trim(),total_degree:sm[1].trim(),max_degree:sm[2].trim(),status:stm?stm[1].trim():'',branch:bm?bm[1].trim():'—',detectedSystem:st};
             } catch(e) {}
             return null;
         }
 
-        async function verifySystem(seatNumber) {
-            var mr = await fetchStudentFromSource(seatNumber,'modern');
+        async function verifySystem(sn) {
+            var mr = await fetchStudentFromSource(sn,'modern');
             if(mr&&currentSystem==='modern') return {valid:true,data:mr};
-            var or_ = await fetchStudentFromSource(seatNumber,'old');
+            var or_ = await fetchStudentFromSource(sn,'old');
             if(or_&&currentSystem==='old') return {valid:true,data:or_};
             if(mr&&currentSystem==='old') return {valid:false,message:'⚠️ رقم الجلوس هذا تابع للنظام <strong>الحديث</strong> (من 320). الرجاء اختيار تبويب "نظام حديث".',wrongSystem:'modern'};
             if(or_&&currentSystem==='modern') return {valid:false,message:'⚠️ رقم الجلوس هذا تابع للنظام <strong>القديم</strong> (من 410). الرجاء اختيار تبويب "نظام قديم".',wrongSystem:'old'};
@@ -320,23 +275,23 @@
         }
 
         function renderResult(data) {
-            var score = parseFloat(data.total_degree)||0, maxScore = parseFloat(data.max_degree)||(currentSystem==='modern'?320:410), percentage = ((score/maxScore)*100).toFixed(1);
+            var sc = parseFloat(data.total_degree)||0, ms = parseFloat(data.max_degree)||(currentSystem==='modern'?320:410), pct = ((sc/ms)*100).toFixed(1);
             studentData = data;
             document.getElementById('studentName').textContent = data.arabic_name;
             document.getElementById('statusPill').textContent = statusText(data.status);
             document.getElementById('statusPill').className = 'status-pill '+statusClass(data.status);
-            document.getElementById('totalScore').textContent = score.toLocaleString('ar-EG');
-            document.getElementById('scoreOutOf').textContent = 'المجموع من '+maxScore;
-            document.getElementById('percentScore').textContent = percentage+'%';
+            document.getElementById('totalScore').textContent = sc.toLocaleString('ar-EG');
+            document.getElementById('scoreOutOf').textContent = 'المجموع من '+ms;
+            document.getElementById('percentScore').textContent = pct+'%';
             document.getElementById('rollOut').textContent = data.seating_no;
             document.getElementById('nameOut').textContent = data.arabic_name;
-            document.getElementById('totalOut').textContent = score+' / '+maxScore;
+            document.getElementById('totalOut').textContent = sc+' / '+ms;
             document.getElementById('branchOut').textContent = data.branch||'—';
             document.getElementById('sysOut').textContent = currentSystem==='modern'?'نظام حديث':'نظام قديم';
             document.getElementById('result').classList.add('show');
             var pc = document.getElementById('predictionContent');
             if(currentSystem==='modern') {
-                pc.innerHTML = '<div class="dept-selector"><h3 style="font-size:18px;font-weight:800;margin-bottom:12px;"><i class="fas fa-focus"></i> اختر القسم الذي ترغب في التقديم له</h3><select id="deptSelect" onchange="checkDepartment()"><option value="">-- اختر القسم --</option>'+Object.keys(TANSIQ_DATA).map(function(n){return '<option value="'+n+'">'+n+'</option>';}).join('')+'</select><div class="select-hint" style="font-size:13px;color:#6a7a95;margin-top:8px;">💡 بعد اختيار القسم، ستظهر لك نتيجة التوقع فوراً</div></div><div id="predictionResultBox" class="prediction-result-box"></div><div id="recommendationBox" class="recommendation-box"></div><div class="all-depts-section" id="allDeptsSection" style="margin-top:28px;"><div class="section-title" style="font-size:18px;font-weight:800;margin-bottom:15px;"><i class="fas fa-list"></i> جميع أقسام الكلية</div><div class="depts-grid" id="deptsGrid"></div></div>';
+                pc.innerHTML = '<div class="dept-selector"><h3 style="font-size:18px;font-weight:800;margin-bottom:12px;"><i class="fas fa-focus"></i> اختر القسم الذي ترغب في التقديم له</h3><select id="deptSelect" onchange="checkDepartment()"><option value="">-- اختر القسم --</option>'+Object.keys(TANSIQ_DATA).map(function(n){return '<option value="'+n+'">'+n+'</option>';}).join('')+'</select><div style="font-size:13px;color:#6a7a95;margin-top:8px;">💡 بعد اختيار القسم، ستظهر لك نتيجة التوقع فوراً</div></div><div id="predictionResultBox" class="prediction-result-box"></div><div id="recommendationBox" class="recommendation-box"></div><div class="all-depts-section" id="allDeptsSection" style="margin-top:28px;"><div style="font-size:18px;font-weight:800;margin-bottom:15px;"><i class="fas fa-list"></i> جميع أقسام الكلية</div><div class="depts-grid" id="deptsGrid"></div></div>';
                 renderAllDepartments(data);
             } else {
                 pc.innerHTML = '<div class="old-system-notice"><h3 style="color:#b45309;">النظام القديم - من 410 درجة</h3><p style="color:#92400e;">عذراً، توقعات أقسام كلية التربية النوعية متاحة فقط <strong>للنظام الحديث</strong> (المجموع من 320).</p></div>';
@@ -350,11 +305,8 @@
             document.getElementById('result').classList.remove('show'); clearMsg();
             if(!sn||sn.length<6) { showMsg('⚠️ برجاء إدخال رقم جلوس صحيح','error'); return; }
             setLoading(true);
-            try {
-                var v = await verifySystem(sn);
-                if(v.valid&&v.data) renderResult(v.data);
-                else showMsg(v.message, v.wrongSystem?'warning':'error');
-            } catch(e) { showMsg('❌ حدث خطأ','error'); }
+            try { var v = await verifySystem(sn); if(v.valid&&v.data) renderResult(v.data); else showMsg(v.message, v.wrongSystem?'warning':'error'); }
+            catch(e) { showMsg('❌ حدث خطأ','error'); }
             finally { setLoading(false); }
         }
 
