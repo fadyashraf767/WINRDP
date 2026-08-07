@@ -10,9 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
@@ -34,31 +31,6 @@
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
-    </div>
-
-    <!-- إحصائيات Floating Button -->
-    <button class="stats-float" onclick="showStatsModal()" title="عرض الإحصائيات">
-        <i class="fas fa-chart-bar"></i>
-    </button>
-
-    <!-- إحصائيات Modal -->
-    <div class="stats-overlay" id="statsOverlay" onclick="closeStatsModal(event)">
-        <div class="stats-content" id="statsContent" onclick="event.stopPropagation()">
-            <button class="stats-close" onclick="closeStatsModal()">✕</button>
-            <h2 style="text-align:center;margin-bottom:25px;color:var(--navy);">📊 إحصائيات الموقع</h2>
-            <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
-                <div style="background:#f0f9ff;border-radius:16px;padding:25px;text-align:center;min-width:160px;">
-                    <div style="font-size:48px;">🔍</div>
-                    <div style="font-size:14px;color:#64748b;font-weight:700;">عدد مرات البحث</div>
-                    <div style="font-size:36px;font-weight:900;color:#0369a1;" id="searchCount">0</div>
-                </div>
-                <div style="background:#f0fdf4;border-radius:16px;padding:25px;text-align:center;min-width:160px;">
-                    <div style="font-size:48px;">👥</div>
-                    <div style="font-size:14px;color:#64748b;font-weight:700;">عدد الزوار</div>
-                    <div style="font-size:36px;font-weight:900;color:#15803d;" id="visitorCount">0</div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- WhatsApp Floating Button -->
@@ -188,75 +160,6 @@
     </main>
 
     <script>
-        // ==================== Firebase Configuration & Statistics ====================
-        const firebaseConfig = {
-            apiKey: "AIzaSyCu_dSvie4rBs18tF0zpojbREwQdIbuavI",
-            authDomain: "natega-c989c.firebaseapp.com",
-            projectId: "natega-c989c",
-            storageBucket: "natega-c989c.firebasestorage.app",
-            messagingSenderId: "67961607225",
-            appId: "1:67961607225:web:7e36f0e5ef23e08467e9e8",
-            measurementId: "G-4TGFDQKTL7",
-            databaseURL: "https://natega-c989c-default-rtdb.firebaseio.com/"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
-        const statsRef = db.ref('statistics');
-
-        // Function to increment search count
-        function incrementSearchCount() {
-            statsRef.child('searches').transaction(function(currentValue) {
-                return (currentValue || 0) + 1;
-            });
-        }
-
-        // Function to track unique visitor
-        function trackVisitor() {
-            const visitorKey = 'natega_visitor_tracked';
-            if (!localStorage.getItem(visitorKey)) {
-                statsRef.child('visitors').transaction(function(currentValue) {
-                    return (currentValue || 0) + 1;
-                });
-                localStorage.setItem(visitorKey, 'true');
-            }
-        }
-
-        // Function to update stats display
-        function updateStatsDisplay(snapshot) {
-            const data = snapshot.val() || {};
-            const searchCount = data.searches || 0;
-            const visitorCount = data.visitors || 0;
-            
-            const searchEl = document.getElementById('searchCount');
-            const visitorEl = document.getElementById('visitorCount');
-            
-            if (searchEl) searchEl.textContent = searchCount.toLocaleString('ar-EG');
-            if (visitorEl) visitorEl.textContent = visitorCount.toLocaleString('ar-EG');
-        }
-
-        // Listen for stats changes
-        statsRef.on('value', updateStatsDisplay);
-
-        // Show statistics modal
-        function showStatsModal() {
-            document.getElementById('statsOverlay').classList.add('show');
-        }
-
-        // Close statistics modal
-        function closeStatsModal(e) {
-            if (e && e.target !== document.getElementById('statsOverlay')) return;
-            document.getElementById('statsOverlay').classList.remove('show');
-        }
-
-        // Track visitor on page load
-        window.addEventListener('load', function() {
-            trackVisitor();
-        });
-
-        // ==================== Original Code Below (Unchanged) ====================
-
         // Hide loading screen
         window.addEventListener('load', function() {
             setTimeout(function() {
@@ -590,11 +493,7 @@
             setLoading(true);
             try { 
                 var v = await verifySystem(sn); 
-                if(v.valid&&v.data) {
-                    renderResult(v.data);
-                    // Increment search count in Firebase
-                    incrementSearchCount();
-                }
+                if(v.valid&&v.data) renderResult(v.data); 
                 else showMsg(v.message, v.wrongSystem?'warning':'error'); 
             }
             catch(e) { 
